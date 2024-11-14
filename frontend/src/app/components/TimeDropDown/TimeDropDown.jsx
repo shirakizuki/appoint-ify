@@ -24,7 +24,7 @@ const TimeDropDown = ({value, onChange, valueName}) => {
     }, []);
 
     return (
-        <select value={value} onChange={(e) => onChange(e.target.value)} className='timeDropdown'>
+        <select value={value} onChange={(e) => onChange(e.target.value)} className='timeDropDown'>
             <option value=''>{valueName}</option>
             {intervals.map((time) => (
                 <option key={time} value={time}>{time}</option>

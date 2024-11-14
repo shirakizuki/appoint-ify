@@ -14,11 +14,9 @@ dotenv.config();
 
 // MIDDLEWARE
 app.use(cors({
-    origin:"https://appoint-ify-shirazuki.vercel.app/",
-    methods:['POST', 'PUT', 'PATCH', 'GET', 'DELETE', 'OPTIONS'],
-    preflightContinue: true,
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    maxAge: 600
+    'Access-Control-Allow-Origin': 'https://appoint-ify-shirazuki.vercel.app/',
+    'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization'
 }));
 app.use(express.json());
 

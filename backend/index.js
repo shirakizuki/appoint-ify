@@ -13,7 +13,12 @@ const port = 4000;
 dotenv.config();
 
 // MIDDLEWARE
-app.use(cors());
+app.use(cors({
+    origin:"https://appoint-ify-shirazuki.vercel.app/",
+    methods:['POST', 'PUT', 'PATCH', 'GET', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    maxAge: 600
+}));
 app.use(express.json());
 
 // TEST API AT DEFAULT ROUTE

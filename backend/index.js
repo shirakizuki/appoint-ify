@@ -16,6 +16,7 @@ dotenv.config();
 app.use(cors({
     origin:"https://appoint-ify-shirazuki.vercel.app/",
     methods:['POST', 'PUT', 'PATCH', 'GET', 'DELETE', 'OPTIONS'],
+    preflightContinue: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
     maxAge: 600
 }));

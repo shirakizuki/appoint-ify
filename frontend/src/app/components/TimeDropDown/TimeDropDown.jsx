@@ -3,7 +3,7 @@ import React from 'react'
 // IMPORT HOOKS
 import { useState, useEffect } from 'react';
 // IMPORT CSS STYLINGS
-import './TimeDropDown.css'
+import './TimeStyleDown.css'
 
 const TimeDropDown = ({value, onChange, valueName}) => {
     const [intervals, setIntervals] = useState([]);

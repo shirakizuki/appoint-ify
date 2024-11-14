@@ -5,7 +5,7 @@ export const ServerContext = createContext()
 
 const ServerContextProvider = (props) => {
     // BASE API URL
-    const url = "https://appoint-ify-bw1r.vercel.app/api";
+    const url = "localhost:4000/api";
     // BASE API TOKEN
     const [token, setToken] = useState('');
     // BASE CONTEXT VALUE

@@ -1,0 +1,107 @@
+.tch-settings {
+    padding: 0rem 12rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.tch-settings .info-cont {
+    border: 2px solid var(--lavender);
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    margin: 10px 0px;
+}
+
+.tch-settings .info-cont .wrap-1 {
+    padding: 10px;
+    margin: 8px;
+}
+
+.tch-settings .info-cont .wrap-1 .detail-cont {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tch-settings .detail-cont h3 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.tch-settings .detail-cont .input-cont {
+    padding: 5px;
+    margin: 3px;
+    display: inline-flex;
+}
+
+.tch-settings .detail-cont .input-cont input {
+    margin: 0px 25px;
+    width: 300px;
+    color: #000000;
+    font-size: 16px;
+    line-height: 20px;
+    min-height: 28px;
+    border-radius: 4px;
+    padding: 10px 16px;
+    border: 1px solid #000;
+    background: rgb(251, 251, 251);
+    transition: all 0.1s ease 0s;
+    margin-left: 8px;
+    :focus{
+        border: 1px solid #000000;
+    }
+}
+
+.tch-settings .detail-cont p {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding-left: 12px;
+}
+
+.tch-settings .info-cont .footer button {
+    margin-right: 12px;
+    padding: 8px 15px;
+    border: 1px solid var(--lavender);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: var(--lavender-fade);
+    color: var(--lavender);
+    cursor: pointer;
+}
+
+.tch-settings .info-cont .pass-cont {
+    padding: 10px;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tch-settings .info-cont .pass-cont .input-cont {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+    margin: 3px;
+}
+
+.tch-settings .info-cont .pass-cont .input-cont input {
+    margin: 0px 25px;
+    width: 300px;
+    color: #000000;
+    font-size: 16px;
+    line-height: 20px;
+    min-height: 28px;
+    border-radius: 4px;
+    padding: 10px 16px;
+    border: 1px solid #000;
+    background: rgb(251, 251, 251);
+    transition: all 0.1s ease 0s;
+    margin-left: 8px;
+    :focus{
+        border: 1px solid #000000;
+    }
+}

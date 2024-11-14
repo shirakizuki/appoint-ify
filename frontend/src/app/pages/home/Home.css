@@ -1,0 +1,57 @@
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../../assets/homepage/home_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(116, 89, 151, 0.5);
+    z-index: -1;
+}
+
+.home .main {
+    padding:  0rem 12rem;
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 60px);
+}
+
+.home .main .bodyContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.home .main .bodyContent h1 {
+    font-size: 14rem;
+    color: var(--white)
+}
+
+.home .main .bodyContent h1 span {
+    color: transparent;
+    -webkit-text-stroke: 3px white;
+}
+
+.home .main .bodyContent h2 {
+    font-size: 2rem;
+    color: var(--white)
+}
+
+.home .main .bodyContent button {
+    margin-top: 1rem;
+    width: 150px;
+    height: 35px;
+    font-size: 20px;
+}

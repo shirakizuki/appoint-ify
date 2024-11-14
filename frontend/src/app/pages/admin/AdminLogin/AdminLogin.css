@@ -1,0 +1,69 @@
+.adminLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    height: 100vh;
+    margin: 0;
+}
+
+.adminLogin .loginForm {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.adminLogin .loginForm h2 {
+    background: inherit;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.adminLogin .loginForm span {
+    background: inherit;
+    color: #454ADE;
+}
+
+.adminLogin .loginForm .inputContainer {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    background: inherit;
+}
+
+.adminLogin .loginForm .inputContainer p {
+    background: inherit;
+    font-size: 16px;
+}
+
+.adminLogin .loginForm .inputContainer input[type="text"],
+.adminLogin .loginForm .inputContainer input[type="password"] {
+    width: 300px;
+    color: #000000;
+    font-size: 16px;
+    line-height: 20px;
+    min-height: 28px;
+    border-radius: 4px;
+    padding: 10px 16px;
+    border: 1px solid #000;
+    background: rgb(251, 251, 251);
+    transition: all 0.1s ease 0s;
+    margin: 5px 0px;
+    :focus{
+        border: 1px solid #000000;
+    }
+}
+
+.adminLogin .loginForm .returnButton {
+    cursor: pointer;
+}
+
+.adminLogin .loginForm .returnButton:hover {
+    color: #454ade;
+}

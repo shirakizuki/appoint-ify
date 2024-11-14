@@ -23,8 +23,3 @@ app.get('/', (req, res) => {
 
 // CREATE API END POINT
 app.use('/api', router);
-
-// LIST TO PORT
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-})

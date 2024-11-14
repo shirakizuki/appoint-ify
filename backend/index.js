@@ -14,10 +14,12 @@ dotenv.config();
 
 // MIDDLEWARE
 app.use(cors({
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-    'Access-Control-Allow-Headers': 'Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization'
+    origin: '*',
+    methods: 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+    allowedHeaders: 'Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization'
 }));
+
+app.options('*', cors()); 
 app.use(express.json());
 
 // TEST API AT DEFAULT ROUTE
@@ -27,3 +29,5 @@ app.get('/', (req, res) => {
 
 // CREATE API END POINT
 app.use('/api', router);
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));

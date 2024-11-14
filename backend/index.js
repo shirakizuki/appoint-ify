@@ -14,7 +14,7 @@ dotenv.config();
 
 // MIDDLEWARE
 app.use(cors({
-    'Access-Control-Allow-Origin': 'https://appoint-ify-shirazuki.vercel.app/',
+    'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization'
 }));

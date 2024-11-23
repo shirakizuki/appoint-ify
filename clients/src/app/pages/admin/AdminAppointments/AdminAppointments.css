@@ -1,0 +1,45 @@
+.adminAppointments {
+    padding: 1rem 12rem;
+    margin: 0.125rem;
+    width: 95%;
+}
+
+.adminAppointments .appointmentContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.adminAppointments .header .navigators {
+    margin: 0.25rem 0rem;
+    display: inline-flex;
+    gap: 0.5rem;
+}
+
+.adminAppointments .header .navigators .btn07 {
+    min-width: 5rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--pcolor-1);
+    background-color: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 0.5rem;
+}
+
+.adminAppointments .header .navigators .btn07:hover {
+    background-color: var(--pcolor-2);
+    color: var(--white);
+}
+
+.adminAppointments .header .navigators .btn07.active {
+    background-color: var(--pcolor-1);
+    color: var(--white);
+}
+
+.adminAppointments .appointmentFlow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

@@ -1,0 +1,29 @@
+.adminTeachers {
+    padding: 1rem 12rem;
+    margin: 0.125rem;
+    width: 95%;
+}
+
+.adminTeachers .header .navigators {
+    margin: 0.25rem 0rem;
+    display: inline-flex;
+    gap: 0.5rem;
+}
+
+.adminTeachers .header .navigators .btn07 {
+    min-width: 5rem;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    background-color: var(--pcolor-1);
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 0.5rem;
+    color: var(--white);
+}
+
+.adminTeachers .header .navigators .btn07:hover {
+    transform: scale(1.05);
+}

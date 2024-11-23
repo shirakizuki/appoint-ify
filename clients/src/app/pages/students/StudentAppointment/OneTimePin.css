@@ -1,0 +1,58 @@
+.oneTimePin section {
+  width: 100%;
+  min-height: calc(100vh - 65px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.oneTimePin .container {
+  border-radius: 12px;
+  background-color: rgb(19, 25, 28);
+  width: 90%;
+  max-width: 500px;
+  padding: 50px 20px;
+  text-align: center;
+}
+.oneTimePin .title {
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+.oneTimePin #otp-form {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.oneTimePin #otp-form input {
+  border: none;
+  background-color: #121517;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  max-width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  outline: 2px solid rgb(66, 66, 66);
+}
+.oneTimePin #otp-form input:focus-visible {
+  outline: 2px solid royalblue;
+}
+.oneTimePin #otp-form input.filled {
+  outline: 2px solid rgb(7, 192, 99);
+}
+.oneTimePin #verify-btn {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 30px;
+  background: royalblue;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  border: none;
+}

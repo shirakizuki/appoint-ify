@@ -1,0 +1,9 @@
+.timeDropDown {
+    margin-right: 10px;
+    padding: 5px 4px;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 125px;
+}

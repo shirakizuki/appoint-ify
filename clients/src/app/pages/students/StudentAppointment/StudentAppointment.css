@@ -1,0 +1,51 @@
+.appointmentContainer {
+  display: flex;
+  flex-direction: row;
+  justify-items: space-between;
+  padding: 1rem 12rem;
+  gap: 12px;
+  width: 100%;
+  height: calc(100vh - 65px);
+}
+
+.formContainer {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.stepTable {
+  width: 350px;
+  border-collapse: collapse;
+  border: 1px solid var(--black);
+  align-items: center;
+}
+
+.stepRow {
+  padding: 10px;
+  text-align: left;
+  vertical-align: middle;
+  height: 30px;
+  border: 1px solid var(--light-gray-2);
+}
+
+.stepRow.title {
+  color: var(--white);
+  background-color: var(--primary-color-1);
+  font-weight: bold;
+}
+
+.stepRow td {
+  padding: 10px;
+}
+
+.stepRow.active {
+  font-weight: bold;
+}
+
+.stepRow.disabled {
+  color: #b0b0b0;
+  pointer-events: none; /* Disables interaction */
+  background-color: #f9f9f9;
+}

@@ -1,0 +1,33 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "backend web service",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "server",
+    "appointment",
+    "appointify"
+  ],
+  "author": "Shriazaki",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mailersend": "^2.3.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.4",
+    "nodemailer": "^6.9.16",
+    "sequelize": "^6.37.5",
+    "server": "file:",
+    "validator": "^13.12.0"
+  }
+}

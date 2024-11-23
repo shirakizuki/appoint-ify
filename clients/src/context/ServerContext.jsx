@@ -1,11 +1,14 @@
 // IMPORT HOOKS
 import { createContext, useState } from 'react';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export const ServerContext = createContext()
 
 const ServerContextProvider = (props) => {
     // BASE API URL
-    const url = "http://localhost:4000/api";
+    const url = process.env.REACT_APP_API_URL;
     // BASE API TOKEN
     const [token, setToken] = useState('');
     // BASE CONTEXT VALUE

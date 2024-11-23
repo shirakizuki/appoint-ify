@@ -1,8 +1,5 @@
 // IMPORT HOOKS
 import { createContext, useState } from 'react';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 export const ServerContext = createContext()
 

@@ -8,21 +8,25 @@ import { ServerContext } from '../../../../context/ServerContext'
 import './FormInput.css'
 
 const SummaryForm = ({ formData, activeStep, handleBack }) => {
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const { url } = useContext(ServerContext);
-    
+
     const handleForm = async () => {
         const newUrl = `${url}/appointment/sendotp`
-        try{
+        setLoading(true);
+        try {
             const response = await axios.post(newUrl, {
-                email:formData.email
+                email: formData.email
             });
-            if(response.status === 200) {
-                navigate('/appointment/otp', {state: {formData}})
+            if (response.status === 200) {
+                navigate('/appointment/otp', { state: { formData } })
                 localStorage.setItem('otoken', response.data.token)
             }
         } catch (error) {
             throw error;
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -36,7 +40,7 @@ const SummaryForm = ({ formData, activeStep, handleBack }) => {
             window.removeEventListener("beforeunload", handleBeforeUnload);
         };
     }, []);
-    
+
     return (
         <div className="contentForm sumamryForm">
             <div className="header">
@@ -57,8 +61,9 @@ const SummaryForm = ({ formData, activeStep, handleBack }) => {
             </div>
             <div className="footer">
                 <button onClick={handleBack} disabled={activeStep === 0} className="formButton"> Back </button>
-                <button className="formButton" onClick={handleForm}> Submit </button>
+                <button className="formButton" onClick={handleForm} disabled={loading}>{loading ? 'Submitting...' : 'Submit'}</button>
             </div>
+            {loading && <div className="loading">Loading...</div>}
         </div>
     )
 }

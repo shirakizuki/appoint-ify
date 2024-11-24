@@ -196,3 +196,10 @@
 .contentForm .inputField .radioOption label {
   margin-left: 10px;
 }
+
+.loading {
+  margin-top: 1rem;
+  color: #007bff;
+  font-weight: bold;
+  text-align: center;
+}

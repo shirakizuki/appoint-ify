@@ -1,6 +1,6 @@
 export function createOTPMessage(email, otp) {
     const message = {
-        from: 'MS_oYY9Ff@trial-o65qngky35jlwr12.mlsender.net',
+        from: 'info@shirazaki.site',
         to: email,
         subject: 'Your One-Time Pin (OTP) for Verification',
         text: 'Your OTP is ${genCode}. This code is valid for 10 minutes.',

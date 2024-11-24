@@ -63,7 +63,7 @@ const AdminAppointments = () => {
 
     useEffect(() => {
         loadAppointments(departmentID);
-    })
+    }, [departmentID])
 
     const sortedAppointments = sortAppointments(appointmentList, sortMode);
 

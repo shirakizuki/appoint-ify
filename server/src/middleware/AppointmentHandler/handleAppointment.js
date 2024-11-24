@@ -1,5 +1,6 @@
 import AppointmentController from '../../models/AppointmentController.js'
 import asyncHandler from 'express-async-handler'
+import { generateRefCode } from '../../services/appointmentService.js';
 
 const appointmentController = new AppointmentController();
 
@@ -44,6 +45,15 @@ const readAllAppointments = asyncHandler(async (req, res) => {
     res.status(200).json({ result });
 })
 
+const readTeacherAppointment = asyncHandler(async (req, res) => {
+    const { teacherID } = req.query;
+    if(!teacherID) {
+        return res.status(400).json({ message: 'Teacher ID is required' });
+    }
+    const result = await appointmentController.readTeacherAppointment(teacherID);
+    res.status(200).json({ result });
+})
+
 const readSpecificAppointment = asyncHandler(async (req, res) => {
     const { appointmentID } = req.query;
     if(!appointmentID) {
@@ -53,6 +63,16 @@ const readSpecificAppointment = asyncHandler(async (req, res) => {
     res.status(200).json({ result });
 })
 
+const createAppointment = asyncHandler(async (req, res) => {
+    const { formData } = req.body;
+    if(!formData) {
+        return res.status(400).json({ message: 'Form data is required' });
+    }
+    const referenceCode = generateRefCode();
+    const result = await appointmentController.createAppointment(formData, referenceCode);
+    res.status(201).json({ referenceCode: referenceCode });
+})
+
 export default {
     readDepartmentList,
     readTeacherList,
@@ -60,4 +80,6 @@ export default {
     readDurationLimiter,
     readAllAppointments,
     readSpecificAppointment,
+    readTeacherAppointment,
+    createAppointment,
 }

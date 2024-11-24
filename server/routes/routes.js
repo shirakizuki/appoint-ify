@@ -29,6 +29,7 @@ router.put('/updateteacherpassword', updateTeacherMiddleware.updateTeacherPasswo
 router.get('/loadweeklyschedule', readWeeklySchedule);
 router.put('/updateweeklyschedule', updateWeeklySchedule);
 router.get('/loadappointmentlist', handleAppointment.readAllAppointments);
+router.get('/loadteacherappointment', handleAppointment.readTeacherAppointment);
 router.get('/loadstudentappointment', handleAppointment.readSpecificAppointment);
 // APPOINTMENT API ROUTES
 router.get('/appointment/departmentlist', handleAppointment.readDepartmentList);
@@ -37,5 +38,6 @@ router.get('/appointment/schedulelist', handleAppointment.readScheduleSlot);
 router.get('/appointment/durationfunc', handleAppointment.readDurationLimiter);
 router.post('/appointment/sendotp', sendOneTimePin);
 router.post('/appointment/verifyotp', validateOTP);
+router.post('/appointment/createappointment', handleAppointment.createAppointment);
 // TODO: Implement route endpoint for creating a new appointment
 export default router;

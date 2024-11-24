@@ -14,7 +14,7 @@ const PersonalInformation = ({ formData, setFormData, activeStep, steps, setActi
         if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.email = "Valid email is required.";
         if (!formData.phoneNumber.trim() || !/^\d{11}$/.test(formData.phoneNumber)) errors.phoneNumber = "A valid 11-digit contact number is required.";
         if (!formData.course.trim()) errors.course = "Course is required.";
-        if (!formData.year || formData.year < 1 || formData.year > 4) errors.year = "Year must be between 1 and 4.";
+        if (!formData.currentYear || formData.currentYear < 1 || formData.currentYear > 4) errors.currentYear = "Year must be between 1 and 4.";
         if (!formData.studentID || formData.studentID <= 0 || !/^\d{8}$/.test(formData.studentID)) errors.studentID = "A valid Student ID is required.";
         setErrors(errors);
         return Object.keys(errors).length === 0;
@@ -87,8 +87,8 @@ const PersonalInformation = ({ formData, setFormData, activeStep, steps, setActi
                 <div className="inputField">
                     <label>Year:</label>
                     <div className='inputCont'>
-                        <input type="number" name="year" min="1" max="4" value={formData.year} onChange={(e) => setFormData({ ...formData, year: e.target.value })} />
-                        {errors.year && <span className="error">{errors.year}</span>}
+                        <input type="number" name="year" min="1" max="4" value={formData.currentYear} onChange={(e) => setFormData({ ...formData, currentYear: e.target.value })} />
+                        {errors.currentYear && <span className="error">{errors.currentYear}</span>}
                     </div>
                 </div>
                 <div className="inputField">

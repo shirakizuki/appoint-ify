@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import axios from 'axios'
-import { useLocation } from 'react-router-dom';
+
+import { useLocation, useNavigate } from 'react-router-dom';
 import { ServerContext } from '../../../../context/ServerContext'
 
 import StudentNavbar from '../../../components/Navbar/StudentNavbar/StudentNavbar'
@@ -9,8 +10,8 @@ import './OneTimePin.css'
 
 const OneTimePin = () => {
     const formData = useLocation().state?.formData;
+    const navigate = useNavigate();
     const { url } = useContext(ServerContext);
-    const [refCode, setRefCode] = useState('');
     const [otp, setOtp] = useState(Array(5).fill(''));
 
     const handleChange = (index, value) => {
@@ -47,7 +48,9 @@ const OneTimePin = () => {
                 token
             });
             if(response.status === 200) {
-                alert('OTP successfully verified')
+                //localStorage.removeItem('otoken');
+                handleFormSubmit();
+                console.table(formData);
             }
         } catch (error) {
             throw error;
@@ -57,12 +60,14 @@ const OneTimePin = () => {
     //TODO: If otp is valid, then proceed to next page
 
     const handleFormSubmit = async () => {
-        const newUrl = `${url}/appointment/submitForm`;
+        const newUrl = `${url}/appointment/createappointment`;
         try {
-            const response = await axios.post(newUrl, formData);
-            if(response.status === 200) {
-                const refCode = response.data.refCode
-                setRefCode(refCode);
+            const response = await axios.post(newUrl, {
+                formData: formData
+            });
+            if(response.status === 201) {
+                const referenceCode = response.data.referenceCode;
+                navigate('/appointment/success', {state: {referenceCode}});
             }
         } catch (error) {
             throw error;

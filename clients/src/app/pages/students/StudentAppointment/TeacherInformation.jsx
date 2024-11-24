@@ -16,7 +16,7 @@ const TeacherInformation = ({ formData, setFormData, activeStep, steps, setActiv
         const errors = {};
         if (!formData.departmentName.trim()) errors.departmentName = "Department is required.";
         if (!formData.fullName.trim()) errors.fullName = "Teacher is required.";
-        if (!formData.purpose.trim()) errors.purpose = "Please provide a valid purpose.";
+        if (!formData.appointmentPurpose.trim()) errors.appointmentPurpose = "Please provide a valid purpose.";
         setErrors(errors);
         return Object.keys(errors).length === 0;
     }
@@ -140,8 +140,8 @@ const TeacherInformation = ({ formData, setFormData, activeStep, steps, setActiv
                     <label>Appointment Purpose:</label>
                     <div className="inputCont">
                         <div className="inputCont">
-                            <textarea id='purpose' name='purpose' maxLength={400} value={formData.purpose} onChange={(e) => setFormData({ ...formData, purpose: e.target.value })} />
-                            {errors.purpose && <span className="error">{errors.purpose}</span>}
+                            <textarea id='appointmentPurpose' name='appointmentPurpose' maxLength={400} value={formData.appointmentPurpose} onChange={(e) => setFormData({ ...formData, appointmentPurpose: e.target.value })} />
+                            {errors.appointmentPurpose && <span className="error">{errors.appointmentPurpose}</span>}
                         </div>
                     </div>
                 </div>

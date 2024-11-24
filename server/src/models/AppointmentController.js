@@ -63,13 +63,43 @@ export default class AppointmentController {
         }
     }
 
-    async createAppointment(formData) {
-        const query = `CALL CreateAppointment(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);`;
+    async createAppointment(formData, referenceCode) {
+        const {
+            departmentID,
+            teacherID,
+            appointmentDate,
+            scheduleID,
+            appointmentPurpose,
+            appointmentDuration,
+            firstName,
+            lastName,
+            email,
+            phoneNumber,
+            course,
+            currentYear,
+            studentID
+        } = formData;
+
+        const query = `CALL CreateAppointment(?,?,?,?,?,?,?,?,?,?,?,?,?,?);`;
         const connection = await db.getConnection();
         try {
             const [result] = await connection.execute(query, [
-                formData.teacherID
+                departmentID,
+                teacherID,
+                appointmentDate,
+                scheduleID,
+                referenceCode,
+                appointmentPurpose,
+                appointmentDuration,
+                firstName,
+                lastName,
+                email,
+                phoneNumber,
+                course,
+                currentYear,
+                studentID,
             ]);
+            return result;
         } catch (error) {
             throw error;
         } finally {
@@ -112,6 +142,32 @@ export default class AppointmentController {
         const connection = await db.getConnection();
         try {
             const [result] = await connection.execute(query, [appointmentID]);
+            return result;
+        } catch (error) {
+            throw error;
+        } finally {
+            connection.release();
+        }
+    }
+
+    async readTeacherAppointment(teacherID) {
+        const query = `
+            SELECT 
+                ap.*,
+                we.startTime,
+                we.endTime,
+                CONCAT(tl.firstName, ' ', tl.lastName) AS teacherName
+            FROM AppointmentList ap
+            LEFT JOIN WeeklySchedule we
+                ON we.scheduleID = ap.scheduleID
+            LEFT JOIN TeacherList tl
+                ON tl.teacherID = ap.teacherID
+            WHERE ap.teacherID = ?
+            ORDER BY ap.appointmentDate DESC;
+        `;
+        const connection = await db.getConnection();
+        try {
+            const [result] = await connection.execute(query, [teacherID]);
             return result;
         } catch (error) {
             throw error;

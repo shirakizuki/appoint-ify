@@ -11,11 +11,6 @@ import OneTimePin from './app/pages/students/StudentAppointment/OneTimePin';
 import Login from './app/pages/BasePages/LoginPage/Login'
 import TeacherHomepage from './app/pages/teacher/TeacherHomepage/TeacherHomepage';
 import TeacherSettings from './app/pages/teacher/TeacherSettings/TeacherSettings';
-import AdminHome from './app/pages/admin/AdminHome/AdminHome'
-import AdminDashboard from './app/pages/admin/AdminDashboard/AdminDashboard';
-import AdminCalendar from './app/pages/admin/AdminCalendar/AdminCalendar'
-import AdminAppointment from './app/pages/admin/AdminAppointment/AdminAppointment'
-import AdminTeacher from './app/pages/admin/AdminTeacher/AdminTeacher'
 // IMPORT COMPONENTS STUDENT
 import StudentAppointment from './app/pages/students/StudentAppointment/StudentAppointment';
 import SuccessPage from './app/pages/students/StudentAppointment/SuccessPage';

@@ -42,7 +42,7 @@ const StudentAppointment = () => {
         email: '',
         phoneNumber: '',
         course: '',
-        year: '',
+        currentYear: '',
         studentID: '',
         // studentPhoto: '',
         // Teacher Information
@@ -50,12 +50,12 @@ const StudentAppointment = () => {
         departmentName: '',
         teacherID: '',
         fullName: '',
-        purpose: '',
+        appointmentPurpose: '',
         // Schedule Information
-        scheduleDate: '',
+        appointmentDate: '',
         scheduleID: '',
         scheduleSlot: '',
-        duration: '',
+        appointmentDuration: '',
     });
 
     return (

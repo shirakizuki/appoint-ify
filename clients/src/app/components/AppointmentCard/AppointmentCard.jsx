@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react'
 
 import './AppointmentCard.css'
 
-const AppointmentCard = ({appointment}) => {
+const AppointmentCard = ({ appointment }) => {
   const [seeMore, setSeeMore] = useState(false);
   const [status, setStatus] = useState('');
 
   const dateFormatter = (date) => {
-    const newDate  = new Date(date);
+    const newDate = new Date(date);
     const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
     const formattedDate = newDate.toLocaleDateString('en-PH', options);
 
@@ -52,7 +52,7 @@ const AppointmentCard = ({appointment}) => {
   }, [appointmentStatus]);
 
   return (
-    <div className="appointmentCard">
+    <div className="appointmentCard" key={appointmentID}>
       <div className="cardContainer">
         <div className="cardLeft">
           <div className="scheduleBlck">
@@ -67,9 +67,7 @@ const AppointmentCard = ({appointment}) => {
         <div className="cardRight">
           <div className="header">
             <h1>{referenceCode} - <span style={{ color: getStatusColor(appointmentStatus) }}>{appointmentStatus}</span></h1>
-            <button className="btn05" onClick={() => setSeeMore(!seeMore)}>
-              {seeMore ? 'See Less' : 'See More'}
-            </button>
+            <button className="btn05" onClick={() => setSeeMore(!seeMore)}>{seeMore ? 'See Less' : 'See More'}</button>
           </div>
           <div className={`body ${seeMore ? 'show' : ''}`}>
             <div className="blck">

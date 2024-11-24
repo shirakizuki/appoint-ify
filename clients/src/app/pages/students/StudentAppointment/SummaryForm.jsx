@@ -46,14 +46,14 @@ const SummaryForm = ({ formData, activeStep, handleBack }) => {
                 <p>Name: <span>{formData.firstName} {formData.lastName}</span></p>
                 <p>Email: <span>{formData.email}</span></p>
                 <p>Number: <span>{formData.phoneNumber}</span></p>
-                <p>Course & Year: <span>{formData.course} {formData.year}</span></p>
+                <p>Course & Year: <span>{formData.course} {formData.currentYear}</span></p>
                 <p>Student ID: <span>{formData.studentID}</span></p>
                 <p>Department: <span>{formData.departmentName}</span></p>
                 <p>Teacher Name: <span>{formData.fullName}</span></p>
-                <p>Schedule Date: <span>{formData.scheduleDate}</span></p>
+                <p>Schedule Date: <span>{formData.appointmentDate}</span></p>
                 <p>Time Slot: <span>{formData.scheduleSlot}</span></p>
-                <p>Duration: <span>{formData.duration} minutes</span></p>
-                <p>Purpose: <span>{formData.purpose}</span></p>
+                <p>Duration: <span>{formData.appointmentDuration} minutes</span></p>
+                <p>Purpose: <span>{formData.appointmentPurpose}</span></p>
             </div>
             <div className="footer">
                 <button onClick={handleBack} disabled={activeStep === 0} className="formButton"> Back </button>

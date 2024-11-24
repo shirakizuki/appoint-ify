@@ -72,10 +72,10 @@ const ScheduleInformation = ({ formData, setFormData, activeStep, steps, setActi
     setSelectedDate(fullDate);
     setFormData((prev) => ({
       ...prev,
-      scheduleDate: fullDate,
+      appointmentDate: fullDate,
       scheduleID: null,
       scheduleSlot: null,
-      duration: null,
+      appointmentDuration: null,
     }));
     setScheduleList([]);
     setAvailableDurations([]);
@@ -90,31 +90,31 @@ const ScheduleInformation = ({ formData, setFormData, activeStep, steps, setActi
       ...prev,
       scheduleID,
       scheduleSlot: selectedSlot ? `${selectedSlot.startTime.slice(0, 5)} - ${selectedSlot.endTime.slice(0, 5)}` : '',
-      duration: '',
+      appointmentDuration: '',
     }));
     setAvailableDurations([]);
   };
 
   const handleDurationChange = (e) => {
-    setFormData((prev) => ({ ...prev, duration: e.target.value }));
+    setFormData((prev) => ({ ...prev, appointmentDuration: e.target.value }));
   };
 
   const validateForm = () => {
     const errors = {};
-    if (!formData.scheduleDate) {
-      errors.scheduleDate = 'Appointment date is required.';
+    if (!formData.appointmentDate) {
+      errors.appointmentDate = 'Appointment date is required.';
     }
 
     if (!formData.scheduleID && scheduleList.length > 0) {
       errors.scheduleID = 'Appointment time is required.';
     }
 
-    if (!formData.scheduleSlot && formData.scheduleDate) {
+    if (!formData.scheduleSlot && formData.appointmentDate) {
       errors.scheduleID = 'Appointment time is required.';
     }
     
-    if ((!formData.duration || availableDurations.length === 0) && scheduleList.length > 0) {
-      errors.duration = 'Appointment duration is required.';
+    if ((!formData.appointmentDuration || availableDurations.length === 0) && scheduleList.length > 0) {
+      errors.appointmentDuration = 'Appointment duration is required.';
     }
     
     setErrors(errors);
@@ -139,16 +139,16 @@ const ScheduleInformation = ({ formData, setFormData, activeStep, steps, setActi
   }, [setFormData]);
 
   useEffect(() => {
-    if (formData.scheduleDate && formData.teacherID) {
-      loadScheduleList(formData.teacherID, formData.scheduleDate);
+    if (formData.appointmentDate && formData.teacherID) {
+      loadScheduleList(formData.teacherID, formData.appointmentDate);
     }
-  }, [formData.scheduleDate, formData.teacherID]);
+  }, [formData.appointmentDate, formData.teacherID]);
 
   useEffect(() => {
-    if (formData.scheduleID && formData.scheduleDate) {
-      loadDuration(formData.scheduleID, formData.scheduleDate);
+    if (formData.scheduleID && formData.appointmentDate) {
+      loadDuration(formData.scheduleID, formData.appointmentDate);
     }
-  }, [formData.scheduleID, formData.scheduleDate]);
+  }, [formData.scheduleID, formData.appointmentDate]);
 
   return (
     <div className="contentForm scheduleForm">
@@ -160,13 +160,13 @@ const ScheduleInformation = ({ formData, setFormData, activeStep, steps, setActi
         <div className="inputField">
           <label>Appointment Date:</label>
           <div className="inputCont">
-            <select name="scheduleDate" id="scheduleDate" value={formData.scheduleDate || ''} onChange={handleDateChange}>
+            <select name="appointmentDate" id="appointmentDate" value={formData.appointmentDate || ''} onChange={handleDateChange}>
               <option value="" disabled>Select appointment date</option>
               {dateRange.map((date, index) => (
                 <option key={index} value={date.full}>{date.short}</option>
               ))}
             </select>
-            {errors.scheduleDate && <span className="error">{errors.scheduleDate}</span>}
+            {errors.appointmentDate && <span className="error">{errors.appointmentDate}</span>}
           </div>
         </div>
         {/* Time Picker */}
@@ -193,7 +193,7 @@ const ScheduleInformation = ({ formData, setFormData, activeStep, steps, setActi
           <label>Available Duration:</label>
           <div className="inputCont">
             {availableDurations.length > 0 ? (
-              <select name="duration" id="duration" value={formData.duration || ''} onChange={handleDurationChange}>
+              <select name="appointmentDuration" id="appointmentDuration" value={formData.appointmentDuration || ''} onChange={handleDurationChange}>
                 <option value="" disabled>Select appointment duration</option>
                 {availableDurations.map((duration, index) => (
                   <option key={index} value={duration}>

@@ -44,6 +44,7 @@ const TeacherModal = ({ closeModal, departmentID, onClose }) => {
 
   const clearFormOnClose = () => {
     clearForm();
+    onClose();
     closeModal();
     setErrors({});
   };

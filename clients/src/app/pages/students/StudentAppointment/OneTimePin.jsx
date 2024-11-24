@@ -48,7 +48,7 @@ const OneTimePin = () => {
     const handleOtpSubmit = async () => {
         setError('');
         const otpCode = otp.join('');
-        if (otpCode.length !== 5 || otpCode.includes('')) {
+        if (!/^\d{5}$/.test(otpCode)) {
             setError('Please enter a valid 5-digit OTP.');
             return;
         }

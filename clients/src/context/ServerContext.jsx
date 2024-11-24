@@ -5,7 +5,7 @@ export const ServerContext = createContext()
 
 const ServerContextProvider = (props) => {
     // BASE API URL
-    const url = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+    const url = import.meta.env.VITE_API_URL;
     // BASE API TOKEN
     const [token, setToken] = useState('');
     // BASE CONTEXT VALUE

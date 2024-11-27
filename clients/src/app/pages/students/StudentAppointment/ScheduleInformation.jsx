@@ -69,7 +69,6 @@ const ScheduleInformation = ({ formData, setFormData, activeStep, steps, setActi
 
   const handleDateChange = (e) => {
     const fullDate = e.target.value;
-    setSelectedDate(fullDate);
     setFormData((prev) => ({
       ...prev,
       appointmentDate: fullDate,

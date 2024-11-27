@@ -90,17 +90,17 @@
   margin-bottom: 0.5rem;
 }
 
-.contentForm.sumamryForm .body {
+.contentForm.summaryForm .body {
   font-size: 20px;
   font-weight: bold;
   margin: 1rem;
 }
 
-.contentForm.sumamryForm .body p {
+.contentForm.summaryForm .body p {
   padding: 8px 0px;
 }
 
-.contentForm.sumamryForm .body span {
+.contentForm.summaryForm .body span {
   padding: 8px 0px;
   font-weight: 400;
 }

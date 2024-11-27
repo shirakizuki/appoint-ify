@@ -1,32 +1,37 @@
-.oneTimePin section {
+.oneTimePin {
   width: 100%;
-  min-height: calc(100vh - 65px);
+  min-height: calc(100vh - 100px);
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
-.oneTimePin .container {
-  border-radius: 12px;
-  box-shadow: 0px 12px 16px rgba(126, 108, 155, 0.541);
-  width: 90%;
-  max-width: 500px;
-  padding: 50px 20px;
-  text-align: center;
+.oneTimePin .title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
 }
 
-.oneTimePin .title {
-  font-size: 25px;
-  margin-bottom: 30px;
+.oneTimePin .descTitle {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.oneTimePin .descTitle span {
+  color: var(--primary-color-1);
 }
 
 .oneTimePin #otp-form {
   width: 100%;
   display: flex;
-  gap: 20px;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 35rem;
+  padding: 4rem 1.25rem;
+  text-align: center;
+  border: 0.1rem solid var(--bcolor-b)
 }
 
 .oneTimePin #otp-form input {

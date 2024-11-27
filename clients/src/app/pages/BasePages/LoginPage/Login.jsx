@@ -1,5 +1,5 @@
 // IMPORT LIBRARY
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios'
 import useSignIn from 'react-auth-kit/hooks/useSignIn'
 // IMPORT HOOKS
@@ -48,6 +48,15 @@ const Login = () => {
         setData({ ...data, [elementID]: event.target.value })
     }
 
+    const handleTypeChange = () => {
+        setType((prevType) => (prevType === 'Teacher' ? 'Admin' : 'Teacher'));
+        setData({
+            username: '',
+            email: '',
+            password: ''
+        })
+    }
+
     /**
      * Handles the login process for a teacher.
      * @param {event} event - The event triggered when the user clicks the login button.
@@ -89,34 +98,34 @@ const Login = () => {
             <DefaultNavbar />
             <div className='teacherLogin'>
                 {type === 'Teacher' ? (
-                    <form className='loginForm' onSubmit={login}>
+                    <form className='loginForm' name='loginForm' onSubmit={login} autoComplete="off">
                         <h2><span>{type}</span> Login</h2>
                         {error && <p style={{ color: 'red', background: '#0000' }}>{error}</p>}
                         <div className="inputContainer">
                             <p>Email</p>
-                            <input type="email" id='email' placeholder='name@company.com' required onChange={onInputChange} />
+                            <input type="email" id='email' placeholder='name@company.com' value={data.email} required onChange={onInputChange} />
                         </div>
                         <div className="inputContainer">
                             <p>Password</p>
-                            <input type="password" id='password' placeholder='********' required onChange={onInputChange} />
+                            <input type="password" id='password' placeholder='********' value={data.password} required onChange={onInputChange} />
                         </div>
                         <Button btn_name={'LOGIN'} btn_type={'submit'}/>
-                        <p className='returnButton' onClick={() => setType('Admin')}>Admin? Click Here!</p>
+                        <p className='returnButton' onClick={handleTypeChange}>Admin? Click Here!</p>
                     </form>
                 ) : (
-                    <form className='loginForm' onSubmit={login}>
+                    <form className='loginForm' name='loginForm' onSubmit={login} autoComplete="off">
                         <h2><span>{type}</span> Login</h2>
                         {error && <p style={{ color: 'red', background: '#0000' }}>{error}</p>}
                         <div className="inputContainer">
                             <p>Username</p>
-                            <input type="text" id='username' placeholder='username123' required onChange={onInputChange} />
+                            <input type="text" id='username' placeholder='username123' value={data.username} required onChange={onInputChange} />
                         </div>
                         <div className="inputContainer">
                             <p>Password</p>
-                            <input type="password" id='password' placeholder='********' required onChange={onInputChange} />
+                            <input type="password" id='password' placeholder='********' value={data.password} required onChange={onInputChange} />
                         </div>
                         <Button btn_name={'LOGIN'} btn_type={'submit'}/>
-                        <p className='returnButton' onClick={() => setType('Teacher')}>Teacher? Click Here!</p>
+                        <p className='returnButton' onClick={handleTypeChange}>Teacher? Click Here!</p>
                     </form>
                 )}
             </div>

@@ -37,20 +37,11 @@ const readDurationLimiter = asyncHandler(async (req, res) => {
 });
 
 const readAllAppointments = asyncHandler(async (req, res) => {
-    const { departmentID } = req.query;
-    if(!departmentID) {
-        return res.status(400).json({ message: 'Department ID is required' });
+    const { departmentID, teacherID } = req.query;
+    if(!departmentID || !teacherID) {
+        return res.status(400).json({ message: 'Department ID or teacher ID is required' });
     }
-    const result = await appointmentController.readAppointmentList(departmentID);
-    res.status(200).json({ result });
-})
-
-const readTeacherAppointment = asyncHandler(async (req, res) => {
-    const { teacherID } = req.query;
-    if(!teacherID) {
-        return res.status(400).json({ message: 'Teacher ID is required' });
-    }
-    const result = await appointmentController.readTeacherAppointment(teacherID);
+    const result = await appointmentController.readAppointmentList(departmentID, teacherID);
     res.status(200).json({ result });
 })
 
@@ -73,6 +64,17 @@ const createAppointment = asyncHandler(async (req, res) => {
     res.status(201).json({ referenceCode: referenceCode });
 })
 
+const approveAppointment = asyncHandler(async (req, res) => {
+    const { appointmentID, appointmentStatus } = req.body;
+
+    if(!appointmentID && !appointmentStatus) {
+        return res.status(400).json({ message: 'Appointment ID is required' });
+    }
+    
+    const affectedRows = await appointmentController.changeStatusAppointment(appointmentID, appointmentStatus);
+    res.status(200).json({ affectedRows });
+})
+
 export default {
     readDepartmentList,
     readTeacherList,
@@ -80,6 +82,6 @@ export default {
     readDurationLimiter,
     readAllAppointments,
     readSpecificAppointment,
-    readTeacherAppointment,
     createAppointment,
+    approveAppointment,
 }

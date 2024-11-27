@@ -1,0 +1,147 @@
+.appointmentModal {
+    height: calc(100vh - 60px);
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+    display: inline-flex;
+    justify-content: end;
+    transform: translateX(100%);
+}
+
+.appointmentModal.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.appointmentModal .modalContainer {
+    width: 20%;
+    background-color: var(--bcolor-w);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.appointmentModal .modalContainer .header {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    margin: 1rem 0rem;
+}
+
+.appointmentModal .modalContainer .header h1 {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: bolder;
+    letter-spacing: 0.1rem;
+}
+
+.appointmentModal .modalContainer .header button {
+    height: auto;
+    width: auto;
+    font-size: 1.25rem;
+    background-color: inherit;
+    border: none;
+    color: var(--light-gray-1);
+    cursor: pointer;
+}
+
+.appointmentModal .message {
+    color: green;
+    background: var(--bcolor-w);
+}
+
+.appointmentModal .error {
+    color: var(--scolor-1);
+}
+
+.appointmentModal .modalContainer .body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+    margin: 1rem 0rem;
+}
+
+.appointmentModal .modalContainer .footer {
+    display: flex;
+    justify-content: end;
+    margin: 1rem 0rem;
+    gap: 1rem;
+}
+
+.appointmentModal .modalContainer .body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+    margin: 1rem 0rem;
+    overflow-y: scroll;
+}
+
+.appointmentModal .modalContainer .body::-webkit-scrollbar {
+    display: none;
+  }
+
+.appointmentModal .modalContainer .body .inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.appointmentModal .modalContainer .body .inputContainer label {
+    font-size: 1rem;
+    color: var(--dark-gray);
+}
+
+.appointmentModal .modalContainer .body .inputContainer input {
+    padding: 0.5rem;
+    border: 1px solid var(--light-gray-2); 
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.appointmentModal .modalContainer .footer .btn10 {
+    min-width: 5rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 0.5rem;
+    color: var(--white);
+}
+
+.appointmentModal .modalContainer .footer #Approved {
+    background-color: green;
+}
+
+.appointmentModal .modalContainer .footer #Declined {
+    background-color: red;
+}
+
+.appointmentModal .modalContainer .footer .btn10:hover {
+    transform: scale(1.05);
+}
+
+.appointmentModal .modalContainer .footer #Approved:disabled,
+.appointmentModal .modalContainer .footer #Declined:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.appointmentModal .modalContainer .footer .btn10:hover:disabled {
+    transform: none
+}

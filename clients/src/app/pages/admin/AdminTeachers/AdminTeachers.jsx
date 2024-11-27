@@ -80,7 +80,7 @@ const AdminTeachers = () => {
   // Load teacher's appointments
   const loadAppointments = async (teacherID) => {
     const token = sessionStorage.getItem('token');
-    const newUrl = `${url}/loadteacherappointment?teacherID=${encodeURIComponent(teacherID)}`;
+    const newUrl = `${url}/loadappointmentlist?departmentID=null&teacherID=${encodeURIComponent(teacherID)}`;
     try {
       const response = await axios.get(newUrl, {
         headers: {
@@ -100,7 +100,6 @@ const AdminTeachers = () => {
     const newDate = new Date(date);
     const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
     const formattedDate = newDate.toLocaleDateString('en-PH', options);
-
     return formattedDate;
   }
 
@@ -216,7 +215,7 @@ const AdminTeachers = () => {
                                     color:
                                       appointment.appointmentStatus === 'Pending'
                                         ? 'orange'
-                                        : appointment.appointmentStatus === 'Cancelled'
+                                        : appointment.appointmentStatus === 'Declined'
                                           ? 'red'
                                           : 'green',
                                   }}

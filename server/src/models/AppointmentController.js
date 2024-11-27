@@ -107,68 +107,61 @@ export default class AppointmentController {
         }
     }
 
-    async readAppointmentList(departmentID) {
+    async readAppointmentList(departmentID, teacherID) {
         const query = `
             SELECT 
-                ap.*,
+                ap.appointmentID,
+                ap.departmentID,
+                ap.teacherID,
+                CONVERT_TZ(appointmentDate, '+00:00', '+08:00') as appointmentDate,
+                ap.scheduleID,
+                ap.referenceCode,
+                ap.appointmentPurpose,
+                ap.appointmentDuration,
+                ap.appointmentStatus,
                 we.startTime,
                 we.endTime,
-                CONCAT(tl.firstName, ' ', tl.lastName) AS teacherName
+                tl.firstName AS teacherFirstName,
+                tl.lastName AS teacherLastName,
+                si.firstName AS studentFirstName,
+                si.lastName AS studentLastName,
+                si.email,
+                si.phoneNumber,
+                si.course,
+                si.currentYear,
+                si.studentID
             FROM AppointmentList ap
             LEFT JOIN WeeklySchedule we
                 ON we.scheduleID = ap.scheduleID
             LEFT JOIN TeacherList tl
                 ON tl.teacherID = ap.teacherID
-            WHERE ap.departmentID = ?;
-        `;
-        const connection = await db.getConnection();
-        try {
-            const [result] = await connection.execute(query, [departmentID]);
-            return result;
-        } catch (error) {
-            throw error;
-        } finally {
-            connection.release();
-        }
-    }
-
-    async readStudentAppointment(appointmentID) {
-        const query = `
-            SELECT
-                *
-            FROM StudentInformation
-            WHERE appointmentID = ?;
-        `;
-        const connection = await db.getConnection();
-        try {
-            const [result] = await connection.execute(query, [appointmentID]);
-            return result;
-        } catch (error) {
-            throw error;
-        } finally {
-            connection.release();
-        }
-    }
-
-    async readTeacherAppointment(teacherID) {
-        const query = `
-            SELECT 
-                ap.*,
-                we.startTime,
-                we.endTime,
-                CONCAT(tl.firstName, ' ', tl.lastName) AS teacherName
-            FROM AppointmentList ap
-            LEFT JOIN WeeklySchedule we
-                ON we.scheduleID = ap.scheduleID
-            LEFT JOIN TeacherList tl
-                ON tl.teacherID = ap.teacherID
-            WHERE ap.teacherID = ?
+            LEFT JOIN StudentInformation si
+                ON si.appointmentID = ap.appointmentID
+            WHERE ap.departmentID = ? OR ap.teacherID = ?
             ORDER BY ap.appointmentDate DESC;
         `;
         const connection = await db.getConnection();
         try {
-            const [result] = await connection.execute(query, [teacherID]);
+            const [result] = await connection.execute(query, [departmentID, teacherID]);
             return result;
+        } catch (error) {
+            throw error;
+        } finally {
+            connection.release();
+        }
+    }
+
+    async changeStatusAppointment(appointmentID, appointmentStatus) {
+        const query = `
+            UPDATE AppointmentList
+            SET appointmentStatus = ?
+            WHERE appointmentID = ?;
+        `;
+        const connection = await db.getConnection();
+        try {
+            const [result] = await connection.execute(query, [appointmentStatus, appointmentID]);
+            const affectedRows = result.affectedRows;
+            return affectedRows;
         } catch (error) {
             throw error;
         } finally {

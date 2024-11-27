@@ -5,7 +5,7 @@ export const ServerContext = createContext()
 
 const ServerContextProvider = (props) => {
     // BASE API URL
-    const url = 'https://appoint-ify.onrender.com/api' || 'http://localhost:4000/api';
+    const url = /*'https://appoint-ify.onrender.com/api' ||*/ 'http://localhost:4000/api';
     // BASE API TOKEN
     const [token, setToken] = useState('');
     // BASE CONTEXT VALUE

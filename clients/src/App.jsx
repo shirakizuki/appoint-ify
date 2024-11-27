@@ -6,7 +6,6 @@ import AuthOutlet from '@auth-kit/react-router/AuthOutlet';
 import { Routes, Route } from 'react-router-dom';
 // IMPORT COMPONENTS DEFAULT
 import Home from '../src/app/pages/BasePages/Homepage/Home'
-import OneTimePin from './app/pages/students/StudentAppointment/OneTimePin';
 // IMPORT COMPONENTS TEACHER
 import Login from './app/pages/BasePages/LoginPage/Login'
 import TeacherHomepage from './app/pages/teacher/TeacherHomepage/TeacherHomepage';
@@ -41,7 +40,6 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/appointment' element={<StudentAppointment />} />
-            <Route path='/appointment/otp' element={<OneTimePin />} />
             <Route path='/appointment/success' element={<SuccessPage />} />
             <Route element={<AuthOutlet fallbackPath='/login'/>}>
               <Route path='/teacher/home' element={<TeacherHomepage />} />

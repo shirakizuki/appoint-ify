@@ -1,0 +1,11 @@
+.teacherHomepage {
+    height: calc(100vh - 70px);
+    padding: 1rem 12rem;
+    z-index: -1;
+}
+
+.rbc-calendar {
+    height: 100%;
+    width: 100%;
+    padding: 10px;   
+}

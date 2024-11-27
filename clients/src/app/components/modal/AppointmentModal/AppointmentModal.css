@@ -102,7 +102,8 @@
     color: var(--dark-gray);
 }
 
-.appointmentModal .modalContainer .body .inputContainer input {
+.appointmentModal .modalContainer .body .inputContainer input,
+.appointmentModal .modalContainer .body .inputContainer select {
     padding: 0.5rem;
     border: 1px solid var(--light-gray-2); 
     border-radius: 4px;

@@ -65,13 +65,24 @@ const createAppointment = asyncHandler(async (req, res) => {
 })
 
 const approveAppointment = asyncHandler(async (req, res) => {
-    const { appointmentID, appointmentStatus } = req.body;
+    const {appointmentID} = req.body;
 
     if(!appointmentID && !appointmentStatus) {
         return res.status(400).json({ message: 'Appointment ID is required' });
     }
-    
-    const affectedRows = await appointmentController.changeStatusAppointment(appointmentID, appointmentStatus);
+
+    const affectedRows = await appointmentController.approveAppointment(appointmentID);
+    res.status(200).json({ affectedRows });
+})
+
+const declineAppointment = asyncHandler(async (req, res) => {
+    const {appointmentID, cancelReason} = req.body;
+
+    if(!appointmentID && !appointmentStatus) {
+        return res.status(400).json({ message: 'Appointment ID is required' });
+    }
+
+    const affectedRows = await appointmentController.declineAppointment(appointmentID, cancelReason);
     res.status(200).json({ affectedRows });
 })
 
@@ -84,4 +95,5 @@ export default {
     readSpecificAppointment,
     createAppointment,
     approveAppointment,
+    declineAppointment
 }

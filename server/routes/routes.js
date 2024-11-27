@@ -21,24 +21,29 @@ const router = express.Router();
 
 router.post('/teacher/login', teacherLogin);
 router.post('/admin/login', departmentLogin);
-router.get('/loadteacher', readTeacherMiddleware.loadSpecificTeacher);
-router.get('/loadteacherlist', readTeacherMiddleware.loadTeacherList);
 router.post('/createteacher', createTeacher)
+router.post('/appointment/sendotp', emailHandler.sendOneTimePin);
+router.post('/appointment/success', emailHandler.sendSuccess);
+router.post('/appointment/approve', emailHandler.sendApprove);
+router.post('/appointment/decline', emailHandler.sendDecline);
+router.post('/appointment/verifyotp', validateOTP);
+router.post('/appointment/createappointment', handleAppointment.createAppointment);
+
 router.put('/updateteacherinformation', updateTeacherMiddleware.updateSpecificTeacher);
 router.put('/updateteacherpassword', updateTeacherMiddleware.updateTeacherPassword);
-router.get('/loadweeklyschedule', readWeeklySchedule);
 router.put('/updateweeklyschedule', updateWeeklySchedule);
-router.get('/loadappointmentlist', handleAppointment.readAllAppointments);
-router.get('/loadstudentappointment', handleAppointment.readSpecificAppointment);
+
 router.patch('/approveappointment', handleAppointment.approveAppointment);
-// APPOINTMENT API ROUTES
+router.patch('/declineappointment', handleAppointment.declineAppointment);
+
 router.get('/appointment/departmentlist', handleAppointment.readDepartmentList);
 router.get('/appointment/teacherlist', handleAppointment.readTeacherList);
 router.get('/appointment/schedulelist', handleAppointment.readScheduleSlot);
 router.get('/appointment/durationfunc', handleAppointment.readDurationLimiter);
-router.post('/appointment/sendotp', emailHandler.sendOneTimePin);
-router.post('/appointment/success', emailHandler.sendSuccess);
-router.post('/appointment/verifyotp', validateOTP);
-router.post('/appointment/createappointment', handleAppointment.createAppointment);
-// TODO: Implement route endpoint for creating a new appointment
+router.get('/loadappointmentlist', handleAppointment.readAllAppointments);
+router.get('/loadstudentappointment', handleAppointment.readSpecificAppointment);
+router.get('/loadweeklyschedule', readWeeklySchedule);
+router.get('/loadteacher', readTeacherMiddleware.loadSpecificTeacher);
+router.get('/loadteacherlist', readTeacherMiddleware.loadTeacherList);
+
 export default router;

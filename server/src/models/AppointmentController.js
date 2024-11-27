@@ -119,6 +119,7 @@ export default class AppointmentController {
                 ap.appointmentPurpose,
                 ap.appointmentDuration,
                 ap.appointmentStatus,
+                ap.cancelReason,
                 we.startTime,
                 we.endTime,
                 tl.firstName AS teacherFirstName,
@@ -151,15 +152,33 @@ export default class AppointmentController {
         }
     }
 
-    async changeStatusAppointment(appointmentID, appointmentStatus) {
+    async approveAppointment(appointmentID) {
         const query = `
             UPDATE AppointmentList
-            SET appointmentStatus = ?
+            SET appointmentStatus = 'Approved'
             WHERE appointmentID = ?;
         `;
         const connection = await db.getConnection();
         try {
-            const [result] = await connection.execute(query, [appointmentStatus, appointmentID]);
+            const [result] = await connection.execute(query, [appointmentID]);
+            const affectedRows = result.affectedRows;
+            return affectedRows;
+        } catch (error) {
+            throw error;
+        } finally {
+            connection.release();
+        }
+    }
+
+    async declineAppointment(appointmentID, cancelReason) {
+        const query = `
+            UPDATE AppointmentList
+            SET cancelReason = ?, appointmentStatus = 'Declined'
+            WHERE appointmentID = ?;
+        `;
+        const connection = await db.getConnection();
+        try {
+            const [result] = await connection.execute(query, [cancelReason, appointmentID]);
             const affectedRows = result.affectedRows;
             return affectedRows;
         } catch (error) {

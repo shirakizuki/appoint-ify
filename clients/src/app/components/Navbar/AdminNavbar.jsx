@@ -36,7 +36,7 @@ const AdminNavbar = ({departmentID}) => {
     }
     
     return (
-        <div className='navbarTeacher'>
+        <div className='navbar'>
             <div className="titleContainer">
                 <img src={def_assets.appointify_logo} alt='appointment_logo' />
                 <h1>Appointify</h1>
@@ -45,7 +45,6 @@ const AdminNavbar = ({departmentID}) => {
                 <ul>
                     <li><a onClick={() => navigate(`/admin/home`, {state: {departmentID}})}>Appointments</a></li>
                     <li><a onClick={() => navigate(`/admin/teachers`, {state: {departmentID}})}>Teachers</a></li>
-                    <li><a>Notifications</a></li>
                     <li><a>Settings</a></li>
                     <li><a onClick={() => logout()}>Logout</a></li>
                 </ul>

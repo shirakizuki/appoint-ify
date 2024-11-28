@@ -2,10 +2,10 @@
 import React from 'react'
 import useSignOut from 'react-auth-kit/hooks/useSignOut'
 // IMPORT HOOKS
-import { def_assets } from '../../../../assets/assets'
+import { def_assets } from '../../../assets/assets'
 import { useNavigate } from 'react-router-dom'
 // IMPORT CSS STYLINGS
-import './TeacherNavbar.css'
+import './NavbarStyling.css'
 
 /**
  * The NavbarHome component renders a navigation bar for the teacher home page.
@@ -36,7 +36,7 @@ const NavbarHome = ({ teacherID }) => {
     }
     
     return (
-        <div className='navbarTeacher'>
+        <div className='navbar'>
             <div className="titleContainer">
                 <img src={def_assets.appointify_logo} alt='appointment_logo' />
             </div>

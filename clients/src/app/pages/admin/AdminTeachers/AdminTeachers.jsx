@@ -7,6 +7,7 @@ import { useState, useEffect, useContext } from 'react'
 
 import AdminNavbar from '../../../components/Navbar/AdminNavbar'
 import TeacherModal from '../../../components/modal/TeacherModal/TeacherModal'
+import Footer from '../../../components/Footer/Footer'
 
 import './AdminTeachers.css'
 
@@ -204,7 +205,9 @@ const AdminTeachers = () => {
                           </tr>
                         </thead>
                         <tbody>
-                          {teacherAppointments.map((appointment) => (
+                          {teacherAppointments.length > 0 ? (
+                            <>
+                            {teacherAppointments.map((appointment) => (
                             <tr key={appointment.appointmentID}>
                               <td>{dateFormatter(appointment.appointmentDate)}</td>
                               <td>{appointment.appointmentDuration} minutes</td>
@@ -228,6 +231,12 @@ const AdminTeachers = () => {
                               </td>
                             </tr>
                           ))}
+                            </>
+                          ) : (
+                            <tr>
+                              <td colSpan="5">No Appointments</td>
+                            </tr>
+                          )}
                         </tbody>
                       </table>
                     </div>
@@ -238,6 +247,7 @@ const AdminTeachers = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   )
 }

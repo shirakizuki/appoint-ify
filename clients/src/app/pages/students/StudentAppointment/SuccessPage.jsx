@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ani_assets } from '../../../../assets/assets'
 
-import StudentNavbar from '../../../components/Navbar/StudentNavbar/StudentNavbar'
+import StudentNavbar from '../../../components/Navbar/StudentNavbar'
 
 import './SuccessPage.css'
 import { useLocation } from 'react-router-dom'

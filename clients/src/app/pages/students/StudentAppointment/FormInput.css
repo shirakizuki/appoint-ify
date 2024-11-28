@@ -16,14 +16,14 @@
   margin: 1rem 0rem;
 }
 
-.contentForm .footer {
+.contentForm .safooter {
   padding: 10px;
   display: flex;
   justify-content: flex-end;
   margin: 1.25rem 0rem;
 }
 
-.contentForm .footer .formButton {
+.contentForm .safooter .formButton {
   padding: 15px 25px;
   margin-right: 10px;
   border: none;
@@ -35,16 +35,16 @@
   cursor: pointer;
 }
 
-.contentForm .footer .formButton:hover {
+.contentForm .safooter .formButton:hover {
   background-color: var(--hover-effect-1);
 }
 
-.contentForm .footer .formButton:disabled {
+.contentForm .safooter .formButton:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.contentForm .footer .formButton:disabled:hover {
+.contentForm .safooter .formButton:disabled:hover {
   opacity: 0.5;
   cursor: not-allowed;
   background-color: var(--primary-color-1);

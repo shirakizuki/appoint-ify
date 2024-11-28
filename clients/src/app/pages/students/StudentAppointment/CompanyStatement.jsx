@@ -27,7 +27,7 @@ const CompanyStatement = ({ activeStep, steps, handleNext }) => {
                 </div>
                 <h3>By clicking continue, you agree to the <a>Terms and Condition</a> and <a>Privacy Policy</a> of Appointify.</h3>
             </div>
-            <div className="footer">
+            <div className="safooter">
                 <button onClick={handleNext} disabled={activeStep === steps.length - 1} className="formButton"> Continue </button>
             </div>
         </div>

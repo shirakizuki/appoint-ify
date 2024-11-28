@@ -8,7 +8,8 @@ import { useEffect, useState, useContext } from 'react';
 import { Calendar, momentLocalizer } from "react-big-calendar";
 // IMPORT COMPONENTS
 import moment from "moment";
-import TeacherNavbar from '../../../components/Navbar/TeacherNavbar/TeacherNavbar'
+import TeacherNavbar from '../../../components/Navbar/TeacherNavbar'
+import Footer from '../../../components/Footer/Footer'
 // IMPOR CSS STYLINGS
 import './TeacherHomepage.css'
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -108,6 +109,7 @@ const TeacherHomepage = () => {
                     />
                 )}
             </section>
+            <Footer />
         </>
     )
 }

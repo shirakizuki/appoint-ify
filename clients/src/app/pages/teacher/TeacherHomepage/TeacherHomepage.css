@@ -1,5 +1,4 @@
 .teacherHomepage {
-    height: calc(100vh - 70px);
     padding: 1rem 12rem;
     z-index: -1;
 }

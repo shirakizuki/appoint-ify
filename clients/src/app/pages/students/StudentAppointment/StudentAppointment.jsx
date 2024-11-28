@@ -2,7 +2,8 @@ import React from 'react'
 
 import { useState } from 'react'
 
-import StudentNavbar from '../../../components/Navbar/StudentNavbar/StudentNavbar'
+import StudentNavbar from '../../../components/Navbar/StudentNavbar'
+import Footer from '../../../components/Footer/Footer'
 
 import CompanyStatement from './CompanyStatement'
 import PersonalInformation from './PersonalInformation'
@@ -87,6 +88,7 @@ const StudentAppointment = () => {
                     }
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

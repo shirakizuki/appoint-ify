@@ -147,7 +147,7 @@ const SummaryForm = ({ formData, activeStep, handleBack }) => {
                                 <p>Duration: <span>{formData.appointmentDuration} minutes</span></p>
                                 <p>Purpose: <span>{formData.appointmentPurpose}</span></p>
                             </div>
-                            <div className="footer">
+                            <div className="safooter">
                                 <button onClick={handleBack} disabled={activeStep === 0} className="formButton">
                                     Back
                                 </button>

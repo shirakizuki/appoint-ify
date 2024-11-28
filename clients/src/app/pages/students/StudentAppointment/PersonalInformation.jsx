@@ -99,7 +99,7 @@ const PersonalInformation = ({ formData, setFormData, activeStep, steps, setActi
                     </div>
                 </div>
             </div>
-            <div className="footer">
+            <div className="safooter">
                 <button onClick={handleBack} disabled={activeStep === 1} className="formButton"> Back </button>
                 <button onClick={handleNext} disabled={activeStep === steps.length - 1} className="formButton"> Continue </button>
             </div>

@@ -159,7 +159,7 @@ const AppointmentModal = ({ closeModal, appointment, onClose }) => {
                                 </select>
                             </div>
                         </div>
-                        <div className="footer">
+                        <div className="modalfooter">
                             <button className='btn10' id='Approved' disabled={appointmentStatus === "Approved" || appointmentStatus === "Declined"} onClick={approveAppointment}>APPROVE</button>
                             <button className='btn10' id='Declined' disabled={appointmentStatus === "Approved" || appointmentStatus === "Declined"} onClick={cancelAppointment}>DECLINE</button>
                         </div>

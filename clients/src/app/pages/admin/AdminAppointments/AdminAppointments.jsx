@@ -6,6 +6,7 @@ import { ServerContext } from '../../../../context/ServerContext';
 import { useState, useContext, useEffect } from 'react';
 
 import AdminNavbar from '../../../components/Navbar/AdminNavbar'
+import Footer from '../../../components/Footer/Footer'
 
 import './AdminAppointments.css'
 import AppointmentModal from '../../../components/modal/AppointmentModal/AppointmentModal';
@@ -104,7 +105,7 @@ const AdminAppointments = () => {
                                             </span>
                                         </td>
                                         <td>
-                                            <button className="btn03 view" onClick={() => openForm(appointment)}>View</button>
+                                            <button className="btnah view" onClick={() => openForm(appointment)}>View</button>
                                         </td>
                                     </tr>
                                 ))}
@@ -116,6 +117,7 @@ const AdminAppointments = () => {
                     </div>
                 </div>
             </section>
+            <Footer/>
         </>
     )
 }

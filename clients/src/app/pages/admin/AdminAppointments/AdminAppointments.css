@@ -2,6 +2,7 @@
   padding: 1rem 12rem;
   margin: 0.125rem;
   width: 95%;
+  min-height: 100vh;
 }
 
 .adminAppointments .appointmentContainer {
@@ -44,14 +45,18 @@
   gap: 0.5rem;
 }
 
-.appointmentTable .btn03.view {
+.appointmentTable .btnah.view {
   padding: 0.35rem 0.85rem;
   border-radius: 0.25rem;
-  border: 1px solid var(--pcolor-1);
-  color: var(--pcolor-1);
-  background-color: transparent;
+  border: none;
+  color: var(--white);
+  background-color: var(--pcolor-1);
   cursor: pointer;
   transition: transform 0.2s;
+}
+
+.appointmentTable .btnah.view:hover {
+  transform: scale(1.05);
 }
 
 .appointmentTable .btn03.view:hover {

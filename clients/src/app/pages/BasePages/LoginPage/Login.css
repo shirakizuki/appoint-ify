@@ -30,7 +30,7 @@
 
 .teacherLogin .loginForm span {
     background: inherit;
-    color: var(--primary-color-1);
+    color: var(--pcolor-1);
 }
 
 .teacherLogin .loginForm .inputContainer {
@@ -69,5 +69,5 @@
 }
 
 .teacherLogin .loginForm .returnButton:hover {
-    color: var(--primary-color-1);
+    color: var(--pcolor-1);
 }

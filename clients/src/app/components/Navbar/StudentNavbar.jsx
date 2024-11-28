@@ -1,10 +1,10 @@
 // IMPORT LIBRARY
 import React from 'react'
 // IMPORT HOOKS
-import { def_assets } from '../../../../assets/assets'
+import { def_assets } from '../../../assets/assets'
 import { useNavigate } from 'react-router-dom'
 // IMPORT CSS STYLINGS
-import './StudentNabvar.css'
+import './NavbarStyling.css'
 
 /**
  * The StudentNavbar component renders a navigation bar for the student home page.
@@ -21,7 +21,7 @@ const StudentNavbar = () => {
   const handleLinkClick = (route) => () => navigate(route);
 
   return (
-    <div className='studentNavbar'>
+    <div className='navbar'>
       <div className="titleContainer">
         <img src={def_assets.appointify_logo} alt='appointment_logo'/>
       </div>

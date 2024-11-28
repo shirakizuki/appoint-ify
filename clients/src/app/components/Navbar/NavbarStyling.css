@@ -1,7 +1,7 @@
 .navbar {
     position: relative;
     top: 0;
-    background: var(--black);
+    background: linear-gradient(90deg, rgba(2,52,103,1) 18%, rgba(2,56,110,1) 26%, rgba(9,68,122,1) 37%, rgba(19,87,140,1) 50%, rgba(36,118,169,1) 65%, rgba(48,141,191,1) 77%, rgba(48,141,191,1) 90%);
     width: 100%;
     height: 60px;
     display: inline-flex;

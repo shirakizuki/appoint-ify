@@ -16,7 +16,7 @@
 }
 
 :root {
-  --pcolor-1: #454ADE;
+  --pcolor-1: #308dbf;
   --pcolor-2: #6091D5;
   --pcolor-3: #C2DDDC;
   --pcolor-4: #E8E0C7;
@@ -27,7 +27,7 @@
   --bcolor-d: #C2DDDC;
   --bcolor-3: #868885;
   --scolor-1: #F01E2C;
-
+  --hcolor-1: #13578c;
 }
 
 * {

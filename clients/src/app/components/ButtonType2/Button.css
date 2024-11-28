@@ -7,11 +7,11 @@
     border-radius: 4px;
     font-size: 13px;
     height: 30px;
-    background-color: #454ade;
+    background-color: var(--pcolor-1);
     color: white;
     padding: 0px 20px;
 }
 
 .btnType2:hover {
-    background-color: #3135be;
+    background-color: var(--hcolor-1);
 }

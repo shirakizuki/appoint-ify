@@ -6,8 +6,9 @@ import { ServerContext } from '../../../../context/ServerContext'
 import { useLocation } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react';
 // IMPORT COMPONENTS
-import TeacherNavbar from '../../../components/Navbar/TeacherNavbar/TeacherNavbar'
+import TeacherNavbar from '../../../components/Navbar/TeacherNavbar'
 import TeacherSchedule from '../TeacherSchedules/TeacherSchedule';
+import Footer from '../../../components/Footer/Footer'
 // IMPOR CSS STYLINGS
 import './TeacherSettings.css'
 
@@ -367,7 +368,7 @@ const TeacherSettings = () => {
                             </div>
                         </div>
                         {/* Render Save and Cancel buttons when in edit mode */}
-                        <div className="footer">
+                        <div className="tsfooter">
                             {editInfo ? (
                                 <div className='btn-cont'>
                                     <button onClick={() => handleSaveInfoButton()}>Save</button>
@@ -427,7 +428,7 @@ const TeacherSettings = () => {
                                 </>
                             )}
                         </div>
-                        <div className="footer">
+                        <div className="tsfooter">
                             {editPass ? (
                                 <div className='btn-cont'>
                                     <button onClick={() => updateTeacherPassword()}>Save</button>
@@ -440,6 +441,7 @@ const TeacherSettings = () => {
                     </div>
                 </div>
             </main>
+            <Footer/>
         </>
     )
 }

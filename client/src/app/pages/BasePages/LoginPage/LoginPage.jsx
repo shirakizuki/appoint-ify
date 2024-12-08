@@ -111,7 +111,6 @@ const LoginPage = () => {
                                 <>
                                     <TextBox type="email" change={onInputChange}placeholder="Email Address" name="email" identifier="email" value={loginData.email} />
                                     <TextBox type="password" change={onInputChange} placeholder="Password" name="password" identifier="password" value={loginData.password} />
-                                    <a className='forgot-password'>Forgot Password?</a>
                                 </>
                             ) : (
                                 <>

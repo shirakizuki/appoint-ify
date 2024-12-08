@@ -20,9 +20,6 @@ const AppointmentPage = () => {
                             <tr className="step-row">
                                 <td className='table-title'>Appointment</td>
                             </tr>
-                            <tr className='step-row'>
-                                <td>Track Appointment</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>

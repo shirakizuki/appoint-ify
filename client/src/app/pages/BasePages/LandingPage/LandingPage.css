@@ -1,0 +1,136 @@
+.landing-page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.landing-page-container .first-banner,
+.landing-page-container .second-banner,
+.landing-page-container .third-banner {
+    padding: 1rem 8rem;
+    width: 100%;
+}
+
+/* FIRST BANNER */
+.landing-page-container  .first-banner {
+    height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(rgba(2,52,103,1) 18%, 
+                rgba(2,56,110,1) 26%, 
+                rgba(9,68,122,1) 37%, 
+                rgba(19,87,140,1) 50%, 
+                rgba(36,118,169,1) 65%, 
+                rgba(48,141,191,1) 77%, 
+                rgba(48,141,191,1) 90%);
+}
+
+.landing-page-container .first-banner h1 {
+    font-size: 6rem;
+    font-style: italic;
+    color: white;
+}
+
+.landing-page-container .first-banner h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+}
+
+/* SECOND BANNER */
+.landing-page-container .second-banner {
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-page-container .second-banner .second-banner-title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.landing-page-container .second-banner .second-banner-title-container h2 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.landing-page-container .second-banner .second-banner-title-container h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.landing-page-container .second-banner .card-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.landing-page-container .second-banner .card-container .card {
+    border: 1px solid var(--blue-3);
+    height: auto;
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.landing-page-container .second-banner .card-container .card:hover {
+    transform: scale(1.05);
+}
+
+.landing-page-container .second-banner .card-container .card .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 4rem;
+    font-style: italic;
+}
+
+.landing-page-container .second-banner .card-container .card .card-description {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+/* THIRD BANNER */
+.landing-page-container .third-banner {
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    background-color: var(--blue-1);
+    margin-top: -1.125rem;
+}
+
+.landing-page-container .third-banner .third-banner-title-container {
+    padding: 0.5rem 0rem;
+    margin: 0.125rem 0rem;
+}
+
+.landing-page-container .third-banner .third-banner-title-container h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.landing-page-container .third-banner .third-banner-title-container p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--white);
+}

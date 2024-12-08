@@ -1,0 +1,108 @@
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.modal .view-teacher-modal {
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 50%;
+  min-height: min-content;
+  height: max-content;
+}
+
+.modal .view-teacher-modal .teacher-header {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    align-items: center;
+}
+
+.modal .view-teacher-modal .teacher-header h1 {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: bolder;
+    letter-spacing: 0.1rem;
+}
+
+.modal .view-teacher-modal .teacher-header .close-button {
+    font-size: 2rem;
+    background-color: inherit;
+    border: none;
+    color: var(--light-gray-1);
+    cursor: pointer;
+}
+
+.modal .view-teacher-modal .teacher-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.modal .view-teacher-modal .teacher-body .personal,
+.modal .view-teacher-modal .teacher-body .schedule {
+    padding: 1rem;
+    margin: 0.125rem;
+}
+
+.modal .view-teacher-modal .teacher-body .personal .personal-header,
+.modal .view-teacher-modal .teacher-body .schedule .schedule-header {
+    margin-bottom: 0.5rem;
+}
+
+.modal .view-teacher-modal .teacher-body .personal .personal-container {
+    border: 1px solid var(--gray-3);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.modal .view-teacher-modal .teacher-body .personal .personal-container h3 {
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+}
+
+.modal .view-teacher-modal .teacher-body .personal .personal-container span {
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+.modal .view-teacher-modal .teacher-body .schedule .table-container {
+  overflow-x: auto;
+}
+
+.modal .view-teacher-modal .teacher-body .schedule .table-container .schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.modal .view-teacher-modal .teacher-body .schedule .table-container .schedule-table  th,
+.modal .view-teacher-modal .teacher-body .schedule .table-container .schedule-table  td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.modal .view-teacher-modal .teacher-body .schedule .table-container .schedule-table  th {
+  color: var(--gray-3);
+}

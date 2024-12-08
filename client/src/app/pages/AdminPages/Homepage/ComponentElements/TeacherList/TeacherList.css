@@ -1,0 +1,99 @@
+.teacherlist-container {
+  margin: 0.2rem;
+  padding: 2px;
+  height: 100%;
+}
+
+.teacherlist-container .teacher-title {
+  padding: 0.125rem 0.025rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+.teacherlist-container .teacher-title h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--blue-1);
+}
+
+.teacherlist-container .teacher-body {
+  border: 1px solid var(--gray-1);
+  border-radius: 0.5rem;
+  height: calc(100% - 15%);
+  max-height: calc(100% - 15%);
+}
+
+.teacherlist-container .teacher-body .table-top {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--gray-1);
+}
+
+.teacherlist-container .teacher-body .table-top .left {
+  margin-left: 1rem;
+}
+
+.teacherlist-container .teacher-body .table-top .right {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  margin-right: 1rem;
+}
+
+.teacherlist-container .teacher-body .table-top .right .small-icon {
+  color: var(--blue-1);
+  font-size: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  padding: 4px;
+  align-items: center;
+  border: 1px solid var(--gray-1);
+  border-radius: 0.25rem;
+}
+
+.teacherlist-container .teacher-body .table-container {
+  overflow-x: auto;
+  overflow-y: scroll;
+  max-height: calc(100% - 10%);
+}
+
+.teacherlist-container .teacher-body .teacher-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.teacherlist-container .teacher-body .teacher-table th,
+.teacherlist-container .teacher-body .teacher-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.teacherlist-container .teacher-body .teacher-table th {
+  color: var(--gray-3);
+}
+
+.teacherlist-container .teacher-body .teacher-table tr:hover {
+  background-color: var(--blue-3);
+}
+
+.teacherlist-container .teacher-body .view-button {
+  background-color: var(--blue-2);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.teacherlist-container .teacher-body .view-button:hover {
+  background-color: var(--blue-1);
+}

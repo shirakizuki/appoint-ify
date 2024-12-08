@@ -1,0 +1,20 @@
+.teacher-home-container {
+    height: 100vh;
+    width: 100%;
+}
+
+.teacher-home-container .home-wrapper {
+    height: calc(100% - 4rem);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
+
+.teacher-home-container .home-wrapper .wrapper-content-container {
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+}

@@ -1,0 +1,98 @@
+.appointment-page {
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+    padding: 1rem 8rem;
+    gap: 12px;
+    width: 100%;
+    min-height: calc(100vh - 65px);
+}
+
+.appointment-page .stepper {
+    border-radius: 1rem;
+}
+
+.appointment-page .step-table {
+    width: 350px;
+    align-items: center;
+    border: 1px solid var(--black);
+    border-collapse: collapse;
+}
+  
+.appointment-page .step-table .step-row {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+    height: 30px;
+    border: 1px solid var(--light-gray-2);
+}
+
+.appointment-page .step-table .step-row td {
+    padding: 10px;
+    font-Size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.appointment-page .step-table .step-row .table-title {
+    background-color: var(--blue-1);
+    color: var(--white);
+}
+
+.appointment-page .company-statement {
+    padding: 0rem 1rem;
+    margin: 0rem 0.5rem;
+}
+
+.appointment-page .company-statement .statement-body {
+    text-align: center;
+}
+
+.appointment-page .company-statement .statement-body .welcome-message {
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.appointment-page .company-statement .statement-body .disclaimer {
+    margin: 2rem 0rem;
+    color: red;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.appointment-page .company-statement .statement-body .description {
+    text-align: start;
+    font-size: 1.125rem;
+    margin: 2rem 0rem;
+    line-height: 1.5rem;
+    letter-spacing: 1.125px;
+}
+
+.appointment-page .company-statement .statement-body .overview h4 {
+    margin-bottom: 0.5rem;
+}
+
+.appointment-page .company-statement .statement-body .overview {
+    text-align: start;
+    font-size: 1.125rem;
+    margin: 2rem 0rem;
+    line-height: 1.5rem;
+    letter-spacing: 1.125px;
+    padding: 1rem;
+    background-color: var(--light-gray-2);
+    border-radius: 5px;
+    border: 1px solid var(--light-gray-1);
+}
+
+.appointment-page .company-statement .statement-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 1.25rem 0rem;
+}
+
+.appointment-page .company-statement .statement-footer .p-component {
+    padding: 1rem 3rem;
+    background-color: var(--blue-1);
+}

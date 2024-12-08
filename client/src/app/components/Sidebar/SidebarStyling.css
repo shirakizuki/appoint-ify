@@ -1,0 +1,43 @@
+.sidebar.teacher {
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+}
+
+.sidebar.admin {
+    border-radius: 0.8rem;
+}
+
+.sidebar {
+  height: 100%;
+  width: 75px;
+  background: var(--darkblue-1);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0rem;
+}
+
+.sidebar .sidebar-icon {
+    color: var(--white);
+    font-size: 35px;
+    cursor: pointer;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0rem;
+}
+
+.sidebar .sidebar-icon .icon {
+    transition: transform 0.3s ease;
+}
+
+.sidebar .sidebar-icon.active {
+    border-left: 5px solid var(--white);
+}
+
+.sidebar .sidebar-icon:hover .icon {
+    transform: scale(1.2);
+}

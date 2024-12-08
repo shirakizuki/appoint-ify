@@ -1,0 +1,99 @@
+.adminlist-container {
+  margin: 0.2rem;
+  padding: 2px;
+  height: 100%;
+}
+
+.adminlist-container .admin-title {
+  padding: 0.125rem 0.025rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+.adminlist-container .admin-title h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--blue-1);
+}
+
+.adminlist-container .admin-body {
+  border: 1px solid var(--gray-1);
+  border-radius: 0.5rem;
+  height: calc(100% - 15%);
+  max-height: calc(100% - 15%);
+}
+
+.adminlist-container .admin-body .table-top {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--gray-1);
+}
+
+.adminlist-container .admin-body .table-top .left {
+  margin-left: 1rem;
+}
+
+.adminlist-container .admin-body .table-top .right {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  margin-right: 1rem;
+}
+
+.adminlist-container .admin-body .table-top .right .small-icon {
+  color: var(--blue-1);
+  font-size: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  padding: 4px;
+  align-items: center;
+  border: 1px solid var(--gray-1);
+  border-radius: 0.25rem;
+}
+
+.adminlist-container .admin-body .table-container {
+  overflow-x: auto;
+  overflow-y: scroll;
+  max-height: calc(100% - 10%);
+}
+
+.adminlist-container .admin-body .admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.adminlist-container .admin-body .admin-table th,
+.adminlist-container .admin-body .admin-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.adminlist-container .admin-body .admin-table th {
+  color: var(--gray-3);
+}
+
+.adminlist-container .admin-body .admin-table tr:hover {
+  background-color: var(--blue-3);
+}
+
+.adminlist-container .admin-body .dlt-button {
+  background-color: var(--blue-2);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.adminlist-container .admin-body .dlt-button:hover {
+  background-color: var(--blue-1);
+}

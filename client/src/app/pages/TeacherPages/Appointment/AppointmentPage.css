@@ -1,0 +1,93 @@
+.appo-container {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 120px);
+}
+
+.appo-container .middle-wrapper {
+  width: 70%;
+  min-height: calc(100vh - 95px);
+  border-right: 1px solid var(--gray-1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.appo-container .middle-wrapper .schedules-list {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+.rbc-event {
+  padding: 0px !important;
+  border: none !important;
+}
+
+.rbc-allday-cell {
+  display: none;
+}
+
+.rbc-timeslot-group {
+  background: white !important;
+}
+
+.rbc-event .rbc-event-label {
+    margin: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.rbc-event .rbc-event-content {
+  margin-top: 5px !important;
+  background: var(--blue-3);
+  color: black;
+  padding: 5px;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+}
+
+.appo-container .right-wrapper {
+    width: 30%;
+    min-height: calc(100vh - 95px);
+    border-right: 1px solid var(--gray-1);
+    padding: 1rem;
+}
+
+.appo-container .right-wrapper .wrapper-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
+}
+
+.appo-container .right-wrapper .wrapper-content .content-list {
+    height: 100%;
+}
+
+.appo-container .right-wrapper .wrapper-content .content-list .custom-accordion {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1rem 0rem;
+}
+
+.appo-container .right-wrapper .wrapper-content .content-list .custom-accordion .custom-accordiontab {
+    background-color: var(--blue-2);
+    background: none;
+}
+
+.appo-container .right-wrapper .wrapper-content .content-list .custom-accordion .custom-accordiontab .list {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.appo-container .right-wrapper .wrapper-content .content-list .custom-accordion .custom-accordiontab .list .list-item {
+    padding: 1rem 0.5rem;
+}

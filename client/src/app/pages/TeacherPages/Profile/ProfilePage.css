@@ -1,0 +1,128 @@
+.profile-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-container .left-wrapper {
+    width: 18%;
+    min-height: calc(100vh - 95px);
+    border-right: 1px solid var(--gray-1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-container .left-wrapper .date-wrapper {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--blue-3);
+    border-radius: 0.5rem;
+}
+
+.profile-container .left-wrapper .calendar-wrapper {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.profile-container .right-wrapper {
+    padding: 1rem 2rem;
+    width: 85%;
+}
+
+.profile-container .right-wrapper .wrapper-header {
+    margin-bottom: 1rem;
+    color: var(--blue-1);
+}
+
+.profile-container .right-wrapper .wrapper-message {
+    width: 100%;
+    height: 20vh;
+    padding: 1.5rem;
+    margin: 1.5rem 0rem;
+    background-color: var(--white);
+    border: 2px solid var(--blue-2);
+    border-radius: 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.profile-container .right-wrapper .wrapper-message .message {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profile-container .right-wrapper .wrapper-message .message h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.profile-container .right-wrapper .wrapper-message .message p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+
+.profile-container .right-wrapper .wrapper-message .image-logo img {
+    height: auto;
+    width: 300px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0%, -13%);
+}
+
+.profile-container .right-wrapper .wrapper-analytics {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.profile-container .right-wrapper .wrapper-analytics .card {
+    width: 25rem;
+    border: 2px solid var(--blue-2);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #f7d986;
+    transition: 0.3s;
+    min-height: 15rem;
+    height: min-content;
+}
+
+.profile-container .right-wrapper .wrapper-analytics .card .cheader {
+    margin: 0.125rem 0rem;
+    padding: 0.125rem 0rem;
+}
+
+.profile-container .right-wrapper .wrapper-analytics .card .cheader h3 {
+    color: var(--blue-1);
+    font-size: 0.95rem;
+}
+
+.profile-container .right-wrapper .wrapper-analytics .card .cbody {
+    height: 100%;
+    display: inline-block;
+    width: 100%;
+    margin: 0.5rem 0rem;
+}
+
+.profile-container .right-wrapper .wrapper-analytics .card .cbody h2 {
+    font-size: 4rem;
+}
+
+.profile-container .right-wrapper .wrapper-analytics .card .cbody .teacher-img {
+    width: 7rem;
+}
+
+.profile-container .edit-btn {
+    padding: 0.5rem 1rem;
+}

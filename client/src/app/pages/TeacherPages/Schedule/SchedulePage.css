@@ -1,0 +1,42 @@
+.schedule-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.schedule-container .left-wrapper {
+    width: 18%;
+    min-height: calc(100vh - 95px);
+    border-right: 1px solid var(--gray-1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedule-container .right-wrapper {
+    padding: 1rem 2rem;
+    width: 85%;
+}
+
+.schedule-container .left-wrapper .date-wrapper {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--blue-3);
+    border-radius: 0.5rem;
+}
+
+.schedule-container .left-wrapper .calendar-wrapper {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.schedule-container .right-wrapper .wrapper-header {
+    margin-bottom: 1rem;
+    color: var(--blue-1);
+}
+
+.schedule-container .right-wrapper .wrapper-scheduler {
+    padding: 1rem;
+}
+

@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import errorHandler from "./src/helpers/errorHandler.js";
 import fs from "node:fs";
 import dotenv from "dotenv";
 
@@ -23,8 +22,6 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
-app.use(errorHandler);
 
 const routeFiles = fs.readdirSync("./routes");
 

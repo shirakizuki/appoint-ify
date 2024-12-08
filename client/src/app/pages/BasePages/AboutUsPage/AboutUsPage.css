@@ -1,0 +1,61 @@
+.aboutus-page-container {
+    padding: 0rem 8rem;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.aboutus-page-container .text-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.aboutus-page-container .text-section .first-section {
+    padding: 0.5rem 0rem;
+    margin: 0.125rem 0rem;
+}
+
+.aboutus-page-container .text-section .first-section .first-section-title {
+    padding: 0.125rem 0rem;
+    margin: 1rem;
+}
+
+.aboutus-page-container .text-section .first-section .first-section-title h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--blue-1);
+}
+
+.aboutus-page-container .text-section .first-section .first-section-title h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.aboutus-page-container .text-section .first-section .first-section-descriptor {
+    padding: 0.5rem 0rem;
+    margin: 0.125rem 0rem;
+}
+
+.aboutus-page-container .text-section .first-section .first-section-descriptor p {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.aboutus-page-container .text-section .second-section {
+    padding: 0.5rem 0rem;
+    margin: 0.125rem 0rem;
+    text-align: center;
+}
+
+.aboutus-page-container .text-section .second-section h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--blue-1);
+}

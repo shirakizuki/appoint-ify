@@ -1,0 +1,59 @@
+.load-wrapp {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 0 10px 10px 0;
+  padding: 20px 20px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.load-wrapp:last-child {
+  margin-right: 0;
+}
+
+.load-wrapp .ring-2 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border: 4px solid #4b9cdb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.load-wrapp .ball-holder {
+  position: absolute;
+  width: 12px;
+  height: 150px;
+  animation: loadingE 1.5s linear infinite;
+}
+
+.load-wrapp .ball {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4282b3;
+}
+
+.load-wrapp .load-5 .ball-holder {
+  animation: loadingE 3s linear infinite;
+}
+
+@keyframes loadingE {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

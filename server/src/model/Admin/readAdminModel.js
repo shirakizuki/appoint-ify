@@ -25,8 +25,7 @@ export default class AdminModel {
                 accountID,
                 accountUsername,
                 CONCAT(firstName, ' ', lastName) AS fullName,
-                dateCreated,
-                status
+                dateCreated
             FROM DepartmentAccount
             WHERE departmentID = ?
             AND (

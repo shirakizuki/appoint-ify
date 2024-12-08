@@ -79,10 +79,6 @@ export const AuthProvider = ({ children }) => {
         deleteCookie('_auth_type');
     };
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
     return (
         <AuthContext.Provider value={{ auth, user, signIn, signOut }}>
             {children}

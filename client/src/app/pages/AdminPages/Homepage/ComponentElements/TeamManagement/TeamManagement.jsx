@@ -122,7 +122,6 @@ const TeamManagement = () => {
                                     <th>Account Username</th>
                                     <th>Full Name</th>
                                     <th>Date Created</th>
-                                    <th>Status</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -133,7 +132,6 @@ const TeamManagement = () => {
                                             <td>{admin.accountUsername}</td>
                                             <td>{admin.fullName}</td>
                                             <td>{admin.dateCreated}</td>
-                                            <td>{admin.status}</td>
                                             <td>
                                                 <button className="dlt-button" onClick={() => deAuthorizeAdmin(admin.accountID)}>
                                                     Delete

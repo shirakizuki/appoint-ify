@@ -1,4 +1,5 @@
 import crypto from 'crypto'
+import { generateSalt } from './generatorHandler.js';
 
 export const hashPasswordWithSalt = (password, salt) => {
     const combined = password + salt;

@@ -17,7 +17,6 @@ const NavbarClassic = () => {
                 <ul>
                     <li><a onClick={() => navigate('/')}>Home</a></li>
                     <li><a onClick={() => navigate('/about-us')}>About Us</a></li>
-                    <li><a>Documentation</a></li>
                     <li><a onClick={() => navigate('/login')}>Login</a></li>
                     <li className='get-started-a'><a onClick={() => navigate('/appointment')}>Get Started</a></li>
                 </ul>

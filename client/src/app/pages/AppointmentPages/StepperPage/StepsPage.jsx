@@ -134,25 +134,19 @@ const StepsPage = () => {
 
     const handleTeacherChange = (e) => {
         const selectedTeacher = e.value;
-        setData({
-            ...data,
-            teacher: selectedTeacher
-        })
+        setData((prevData) => ({
+            ...prevData,
+            teacher: selectedTeacher,
+        }));
     }
 
+
     const handleDateChange = (e) => {
-        const date = new Date(e.value);
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        const hours = String(date.getHours()).padStart(2, '0');
-        const minutes = String(date.getMinutes()).padStart(2, '0');
-        const seconds = String(date.getSeconds()).padStart(2, '0');
-        const newDate = `${year}-${month}-${day}-${hours}:${minutes}:${seconds}`;
-        setData({
-            ...data,
-            appointmentDate: newDate
-        })
+        setData((prevData) => ({
+            ...prevData,
+            appointmentDate: e.value,
+        }));
+        const newDate = e.value.toISOString().slice(0, 10);
         readScheduleSlot(data.teacher.teacherID, newDate);
     }
 
@@ -305,6 +299,8 @@ const StepsPage = () => {
             }
         } catch (err) {
             showErrorMessage('Invalid OTP. Please try again.');
+        } finally{
+            localStorage.removeItem('otpToken');
         }
     };
 
@@ -382,14 +378,24 @@ const StepsPage = () => {
         console.log(department);
     }, [])
 
+    useEffect(() => {
+        if(data.selectedDate) {
+            const interval = setInterval(() => {
+                readScheduleSlot(data.teacher.teacherID, data.selectedDate.toISOString().slice(0, 10));
+                readDurationLimiter(data.schedule.scheduleID, data.selectedDate.toISOString().slice(0, 10));
+            }, 2000);
+            return () => clearInterval(interval);
+        }
+    }, [data.selectedDate]);
+
     return (
         <>
             <NavbarClassic />
             <ToastContainer />
             <div className='steps-page'>
                 <div className="card">
-                    <Stepper ref={stepperRef} style={{ flexBasis: '50rem' }} orientation="horizontal">
-                        <StepperPanel header="Personal Information" disabled>
+                    <Stepper ref={stepperRef} style={{ flexBasis: '50rem' }} linear={true}>
+                        <StepperPanel header="Personal Information">
                             <div className="step-card">
                                 <div className="step-title">
                                     <h2>Basic information about you</h2>
@@ -493,7 +499,7 @@ const StepsPage = () => {
                                         <span className="p-inputgroup-addon">
                                             <i className="pi pi-tablet"></i>
                                         </span>
-                                        <InputTextarea autoResize='false' value={data.appointmentPurpose} onChange={(e) => setData({ ...data, appointmentPurpose: e.target.value })} rows={5} cols={30} />
+                                        <InputTextarea autoResize='false' placeholder="Appointment Purpose" value={data.appointmentPurpose} onChange={(e) => setData({ ...data, appointmentPurpose: e.target.value })} rows={5} cols={30} />
                                     </div>
                                 </div>
                             </div>
@@ -632,8 +638,8 @@ const StepsPage = () => {
                                             <strong>We have received your appointment.</strong>
                                             <br />
                                             <br />
-                                            Please check your email from time to time for any updates regarding your appointment.
-                                            You can use your reference code to check for any status using our appointment tracker.
+                                            Please check your email from time to time for any updates regarding your appointment. Present this reference code to the teacher upon arrival.
+                                            Thank you for using Appointify as your booking service. 
                                         </p>
                                     </div>
                                 </Card>

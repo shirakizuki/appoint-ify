@@ -50,9 +50,13 @@ const ViewAppointmentModal = ({ closeModal, appointment, onClose }) => {
      * If the current status of the appointment is active, then the admin can cancel or complete the appointment.
      * 
      */
-    const updateStatus = async (appointmentID, appointmentStatus, cancelReason = null) => {
+    const updateStatus = async (appointmentID, appointmentStatus, cancelReason = null, email) => {
         const token = sessionStorage.getItem('token');
         const newUrl = `${url}/update/current/appointment/status`;
+
+        const approveUrl = `${url}/send/email/approve`;
+        const declineUrl = `${url}/send/email/decline`;
+        const cancelUrl = `${url}/send/email/cancelled`;
 
         if (decline && (!cancelReason || (typeof cancelReason === 'string' && (cancelReason.trim().length === 0 || /^[0-9]+$/.test(cancelReason.trim()) || cancelReason.trim().length === 1)))) {
             showErrorMessage('Please provide a cancel reason.');
@@ -67,11 +71,44 @@ const ViewAppointmentModal = ({ closeModal, appointment, onClose }) => {
                 },
             });
             if (response.status === 200) {
-                showSuccessMessage('Successfully updated appointment.');
-                appointment.appointmentStatus = appointmentStatus;
-                appointment.cancelReason = cancelReason;
+                if (appointmentStatus === 'Decline') {
+                    const reponse = await axios.post(declineUrl, { email, cancelReason}, {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        }
+                    })
+                    if (reponse.status === 200) {
+                        showSuccessMessage('Successfully updated appointment.');
+                        appointment.appointmentStatus = appointmentStatus;
+                        appointment.cancelReason = cancelReason.trim();
+                    }
+                } else if (appointmentStatus === 'Cancelled') {
+                    const reponse = await axios.post(cancelUrl, { email, cancelReason}, {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        }
+                    })
+                    if (reponse.status === 200) {
+                        showSuccessMessage('Successfully updated appointment.');
+                        appointment.appointmentStatus = appointmentStatus;
+                        appointment.cancelReason = cancelReason.trim();
+                    }
+                } else if (appointmentStatus === 'Active') {
+                    const reponse = await axios.post(approveUrl, { email }, {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        }
+                    })
+                    if (reponse.status === 200) {
+                        showSuccessMessage('Successfully updated appointment.');
+                        appointment.appointmentStatus = appointmentStatus;
+                        appointment.cancelReason = cancelReason.trim();
+                    }
+                }
             }
         } catch (error) {
+            console.log(error)
+
             throw error;
         } finally {
             setLoading(false);
@@ -96,6 +133,8 @@ const ViewAppointmentModal = ({ closeModal, appointment, onClose }) => {
         }
         
     }, [appointment.appointmentDate, appointment.appointmentStatus]);
+    
+
 
     return (
         <div className='modal show'>
@@ -188,7 +227,7 @@ const ViewAppointmentModal = ({ closeModal, appointment, onClose }) => {
                             {appointment.appointmentStatus === 'Pending' && (
                                 <>
                                     <Button_1 text="Decline" onClick={() => setDecline(true)} disabled={decline}/>
-                                    <Button_1 text="Approve" onClick={() => { updateStatus(appointment.appointmentID, 'Active')}} disabled={decline}/>
+                                    <Button_1 text="Approve" onClick={() => { updateStatus(appointment.appointmentID, 'Active', null, appointment.email)}} disabled={decline}/>
                                 </>
                             )}
                             {/* 
@@ -211,7 +250,7 @@ const ViewAppointmentModal = ({ closeModal, appointment, onClose }) => {
                             <div className="cancel-body">
                                 <RiCloseLine onClick={() => { setDecline(false); setCancelReason(''); }} className='cancel-button' />
                                 <TextBox placeholder="Reason for declining this appointment." value={cancelReason} change={(e) => setCancelReason(e.target.value)} />
-                                <Button_1 text="Submit" onClick={() => { updateStatus(appointment.appointmentID, 'Decline', cancelReason)}} />
+                                <Button_1 text="Submit" onClick={() => { updateStatus(appointment.appointmentID, 'Decline', cancelReason, appointment.email)}} />
                             </div>
                         )}
                         {/* 
@@ -222,7 +261,7 @@ const ViewAppointmentModal = ({ closeModal, appointment, onClose }) => {
                             <div className="cancel-body">
                                 <RiCloseLine onClick={() => setCancel(false)} className='cancel-button' />
                                 <TextBox placeholder="Reason for cancellation" value={cancelReason} change={(e) => setCancelReason(e.target.value)} />
-                                <Button_1 text="Submit" onClick={() => { updateStatus(appointment.appointmentID, 'Cancelled', cancelReason)}} />
+                                <Button_1 text="Submit" onClick={() => { updateStatus(appointment.appointmentID, 'Cancelled', cancelReason, appointment.email)}} />
                             </div>
                         )}
                     </>

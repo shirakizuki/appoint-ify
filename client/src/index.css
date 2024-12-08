@@ -38,3 +38,21 @@ li {
 button {
   cursor: pointer;
 }
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--white); /* Background of the track */
+  border-radius: 6px; /* Rounded corners for track */
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--blue-1);
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

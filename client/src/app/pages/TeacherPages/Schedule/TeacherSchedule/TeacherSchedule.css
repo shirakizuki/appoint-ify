@@ -10,6 +10,8 @@
     padding: 15px;
     border: 2px solid var(--black);
     border-radius: 8px;
+    max-height: calc(100vh - 250px);
+    overflow: scroll;
 }
 
 .wrap .wrapper .wrap-header {

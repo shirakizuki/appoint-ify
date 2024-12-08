@@ -3,6 +3,7 @@ import transporter from '../../config/mail/email.js';
 
 import { createOTPMessage, createSuccessMesage, createApproveMessage, createDeclineMessage, createCancelledMessage } from "../../constant/emailFormats.js";
 import { generateOTP, generateOTPToken } from '../../util/generatorHandler.js';
+import { verifyToken } from '../../helper/tokenChecker.js';
 
 // FOR OTP EMAIL
 export const sendOneTimePin = asyncHandler(async (req, res) => {
@@ -47,8 +48,8 @@ export const sendSuccess = asyncHandler(async (req, res) => {
 })
 
 // FOR APPOINTMENT WAS APPROVED // ACTIVE
-export const sendApprove = asyncHandler(async (req, res) => {
-    const { email, referenceCode, content } = req.body;
+export const sendApprove = [verifyToken, asyncHandler(async (req, res) => {
+    const { email } = req.body;
 
     if(!email) {
         return res.status(400).json({ message: 'Email is required' });
@@ -63,10 +64,10 @@ export const sendApprove = asyncHandler(async (req, res) => {
     }).catch(error => {
         return res.status(500).json({ message: error.message });
     });
-})
+})]
 
 // FOR APPOINTMENT WAS DECLINED
-export const sendDecline = asyncHandler(async (req, res) => {
+export const sendDecline =[verifyToken, asyncHandler(async (req, res) => {
     const { email, cancelReason } = req.body;
 
     if(!email) {
@@ -82,10 +83,10 @@ export const sendDecline = asyncHandler(async (req, res) => {
     }).catch(error => {
         return res.status(500).json({ message: error.message });
     });
-})
+})]
 
 // FOR APPOINTMENT WAS DECLINED
-export const sendCancelled = asyncHandler(async (req, res) => {
+export const sendCancelled = [verifyToken, asyncHandler(async (req, res) => {
     const { email, cancelReason } = req.body;
 
     if(!email) {
@@ -101,4 +102,4 @@ export const sendCancelled = asyncHandler(async (req, res) => {
     }).catch(error => {
         return res.status(500).json({ message: error.message });
     });
-})
+})]

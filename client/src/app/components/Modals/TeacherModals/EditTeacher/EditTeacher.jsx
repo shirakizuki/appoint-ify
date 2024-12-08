@@ -252,15 +252,15 @@ const EditTeacher = ({ closeModal }) => {
                                 {editingPassword === true && (
                                     <>
                                         {[
-                                            { id: 'oldPassword', value: 'oldPassword' },
-                                            { id: 'newPassword', value: 'newPassword' },
-                                            { id: 'confirmPassword', value: 'confirmPassword' },
-                                        ].map(({ id, value }) => (
+                                            { id: 'oldPassword', value: 'oldPassword', placeholder: 'Old password'},
+                                            { id: 'newPassword', value: 'newPassword', placeholder: 'New password' },
+                                            { id: 'confirmPassword', value: 'confirmPassword', placeholder: 'Confirm new password' },
+                                        ].map(({ id, value, placeholder }) => (
                                             <div className="p-inputgroup flex-1" key={id}>
                                                 <span className="p-inputgroup-addon">
                                                     <i className="pi pi-user"></i>
                                                 </span>
-                                                <Password id={id} name={value} value={data[value]} onChange={onInputChange} />
+                                                <Password id={id} name={value} value={data[value]} onChange={onInputChange} placeholder={placeholder}/>
                                             </div>
                                         ))}
                                     </>

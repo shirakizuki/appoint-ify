@@ -27,8 +27,9 @@
   border-radius: 1rem;
   padding: 1.5rem;
   width: 50%;
-  min-height: min-content;
-  height: max-content;
+  min-height: 80%;
+  max-height: 80%;
+  overflow: scroll;
 }
 
 .modal .view-teacher-modal .teacher-header {

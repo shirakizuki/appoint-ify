@@ -96,7 +96,6 @@ const Appointment = () => {
         setTodayAppointment(todayAppointments);
         setUpcomingAppointment(upcomingAppointments);
         setPastAppointment(pastAppointments);
-        setActionAppointment(actionAppointments);
         setSortedAppointment(app);
     };
 
@@ -143,8 +142,8 @@ const Appointment = () => {
                                 events={sortedAppointment}
                                 startAccessor="start"
                                 endAccessor="end"
-                                defaultView='day'
-                                views={["day"]}
+                                defaultView='month'
+                                views={["month", "week","day"]}
                                 step={30}
                                 onSelectEvent={event => selectEvent(event)}
                                 eventPropGetter={eventPropGetter}
@@ -185,22 +184,6 @@ const Appointment = () => {
                                                 <div className="list-item">No upcoming appointment</div>
                                             ) : (
                                                 upcomingAppointment.map((appointment, index) => (
-                                                    <div className="list-item" key={index}> {appointment.studentFirstName} {appointment.studentLastName} ({appointment.appointmentDate.slice(0, 10)})</div>
-                                                ))
-                                            )}
-                                        </div>
-                                    </AccordionTab>
-                                    <AccordionTab
-                                        header={
-                                            <span style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.5rem"}}>
-                                                <h3>Requires Actions</h3>
-                                                <Badge value={actionAppointment.length} />
-                                            </span>}className='custom-accordiontab' >
-                                        <div className="list">
-                                            {actionAppointment.length === 0 ? (
-                                                <div className="list-item">No appointment requires action</div>
-                                            ) : (
-                                                actionAppointment.map((appointment, index) => (
                                                     <div className="list-item" key={index}> {appointment.studentFirstName} {appointment.studentLastName} ({appointment.appointmentDate.slice(0, 10)})</div>
                                                 ))
                                             )}

@@ -24,11 +24,20 @@ export const createAppointment = asyncHandler(async (req, res) => {
         return res.status(400).json({ message: 'Request body is empty.' });
     }
 
+    const ddate = new Date(appointmentDate);
+    const year = ddate.getFullYear();
+    const month = String(ddate.getMonth() + 1).padStart(2, '0');
+    const day = String(ddate.getDate()).padStart(2, '0');
+    const hours = String(ddate.getHours()).padStart(2, '0');
+    const minutes = String(ddate.getMinutes()).padStart(2, '0');
+    const seconds = String(ddate.getSeconds()).padStart(2, '0');
+    const newDate = `${year}-${month}-${day}-${hours}:${minutes}:${seconds}`;
+
     const referenceCode = generateRefCode();
     const result = await appointmentModel.createAppointment(
         departmentID,
         teacherID, 
-        appointmentDate, 
+        newDate, 
         scheduleID,
         referenceCode,
         appointmentPurpose,

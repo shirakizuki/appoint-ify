@@ -44,9 +44,7 @@
   background: var(--blue-3);
   color: black;
   padding: 5px;
-  border-left: 2px solid;
-  border-right: 2px solid;
-  border-bottom: 2px solid;
+  border: 1px solid;
 }
 
 .appo-container .right-wrapper {

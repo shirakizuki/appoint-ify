@@ -44,8 +44,8 @@ export function createSuccessMesage(email, referenceCode) {
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 10px; background-color: #f9f9f9;">
             <h2 style="text-align: center; color: #333;">Your One-Time Pin (OTP)</h2>
             <p style="color: #555;">Dear user,</p>
-            <p style="color: #555;">Thank you for booking your appointment with us. Please have the copy of your reference code. You can use this to track your appointment status.:</p>
-            <p style="color: #555;">Please check your email from time to time for any updates regarding your appointment.</p>
+            <p style="color: #555;">Thank you for booking your appointment with us. Please have the copy of your reference code. Present this to the teacher upon arrival. :</p>
+            <p style="color: #555;">Please check your email from time to time for any updates regarding your appointment. Remember that this is first come first server appointment.</p>
             
             <div style="text-align: center; margin: 20px 0;">
                 <span style="display: inline-block; font-size: 24px; font-weight: bold; padding: 10px 20px; background-color: #007bff; color: white; border-radius: 5px;">${referenceCode}</span>
